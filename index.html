@@ -1,0 +1,1376 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KDE's Portfolio</title>
+
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/fonts/eng_fonts.css">
+    <link rel="stylesheet" href="assets/css/common.css">
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/locomotive-scroll.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            cursor: none;
+        }
+
+        #header {
+            display: none;
+        }
+
+        .scrollTop {
+            position: fixed;
+            left: 10px;
+            bottom: 10px;
+            width: 50px;
+            height: 50px;
+            background: #000;
+            border-radius: 50px;
+            text-align: center;
+            line-height: 50px;
+            z-index: 100000;
+            color: #fff;
+        }
+        .fixed {
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+        }
+
+        /* 마우스 커서 */
+        .mouse__cursor {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            z-index: 9999;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 50%);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+        .mouse__cursor.active {
+            transform: scale(5);
+            background: rgba(0, 0, 0, 50%);
+        }
+        .mouse__cursor.black {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 30px;
+            height: 30px;
+            z-index: 9999;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 50%);
+            user-select: none;
+            pointer-events: none;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+
+        /* headerType */
+        #headerType {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            z-index: 9997;
+        }
+        .header__wrap {
+            background: #0b130dbb;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            align-items: center;
+        }
+        .header__logo {
+            padding-left: 30px;
+        }
+        .header__logo a {
+            color: #D2E3C0;
+            font-family: 'Poppins';
+            font-weight: 200;
+            font-size: 24px;
+        }
+        .header__menu {
+            align-items: center;
+        }
+        .header__menu ul {
+            display: flex;
+            flex-wrap: wrap; 
+            padding-right: 30px;
+        }
+        .header__menu ul li {
+            padding-left: 20px;
+        }
+        .header__menu ul li a {
+            font-family: 'Poppins';
+            color: #D2E3C0;
+            font-size: 18px;
+            font-weight: 200;
+        }
+
+        /* introType */
+        .intro__wrap {
+            background: #0B130D;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .intro__title__wrap {}
+        .intro__title {
+            color: #fff;
+            font-size: 8vw;
+            text-align: center;
+            z-index: 2;
+            line-height: 1.1;
+            position: relative;
+        }
+        .intro__title:nth-child(2) {
+            color: #D2E3C0;
+        }
+
+        .figureImg__inner {}
+        .figureImg__inner .img1 {
+            width: 10vw;
+            position: absolute;
+            right: 15%;
+            bottom: 25%;
+        }
+        .figureImg__inner .img2 {
+            width: 10vw;
+            position: absolute;
+            left: 43%;
+            top: 8%;
+        }
+        .figureImg__inner .img3 {
+            width: 10vw;
+            position: absolute;
+            left: 15%;
+            bottom: 15%;
+        }
+        .scroll__btn {
+            display: block;
+            width: 2.3vw;
+            height: 5.2vw;
+            background-image: url(assets/img/scroll_down.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0 auto;
+        }
+
+        /* webglType */
+        .webgl__wrap {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+        .webgl__iframe {
+            height: 100vh;
+            width: 100%;
+        }
+        .webgl__title__wrap > h3 {
+            color: #D2E3C0;
+            font-size: 8vw;
+            z-index: 2;
+            position: absolute;
+            left: 50vh;
+            bottom: 50vh;
+            /* transform: translate(-50%, -50%); */
+        }
+        .webgl__title2 {
+            color: #fff !important;
+        }
+
+        /* myWorkPhp */
+        .myWorkPhp__wrap {
+            width: 100%;
+            background: #fff;
+        }
+        .myWorkPhp__inner {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .myWorkPhp__wrap figure {
+            width: 60%;
+            margin-right: 5vw;
+            margin-left: 2vw;
+        }
+        .myWork__titleDescWrap {
+            position: relative;
+        }
+        .myWorkPhp__wrap .myWork__titleDescWrap {
+            margin-top: 5vw;
+        }
+
+        /* myWorkWebStan */
+        .myWorkWebStan__wrap {
+            width: 100%;
+            background: #fff;
+        }
+        .myWorkWebStan__inner {
+            height: 100vh;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .myWorkWebStan__wrap figure {
+            width: 62%;
+            /* margin-right: 40px; */
+            margin-left: 4vw;
+        }
+        .myWorkWebStan__wrap .myWork__titleDescWrap {
+            margin-top: 15vw;
+            margin-left: 2vw;
+        }
+
+        /* myWorkRefer */
+        .myWorkRefer__wrap {
+            width: 100%;
+            background: #fff;
+        }
+        .myWorkRefer__inner {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .myWorkRefer__wrap figure {
+            width: 42%;
+            margin-right: 4vw;
+            margin-left: 2vw;
+        }
+        .myWorkRefer__wrap .myWork__titleDescWrap {
+            margin-top: 1vw;
+        }
+        .myWork__desc2 {
+            margin-top: 16vw;
+            margin-left: 15vw;
+            line-height: 160%;
+        }
+
+        /* myWorkReactVue */
+        .myWorkReactVue__wrap {
+            width: 100%;
+            background: #fff;
+        }
+        .myWorkReactVue__inner {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            margin-left: 35vw;
+        }
+        .myWorkReactVue__inner figure {
+            width: 70%;
+        }
+        .myWorkReactVue__wrap .myWork__titleDescWrap {
+            margin-top: 2vw;
+        }
+
+        /* 제목&부제&설명 영역 */
+        .myWork__bigtitle {
+            font-family: 'pp_eiko_italiclight';
+            color: rgba(0,0,0,15%);
+            font-size: 100px;
+            margin-left: 80px;
+        }
+        .myWork__title {
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 35px;
+            z-index: 2;
+        }
+        .myWork__desc {
+            margin-top: 2vw;
+            line-height: 160%;
+        }
+
+        /* intro2Type */
+        .intro2__type {
+            background: #0B130D;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+        }
+        .intro2__title__wrap {}
+        .intro2__title {
+            color: #fff;
+            font-size: 8vw;
+            text-align: center;
+            z-index: 2;
+            line-height: 1.1;
+            /* position: relative; */
+        }
+        .intro2__title:nth-child(1) {
+            color: #D2E3C0 !important;
+        }
+
+        .figureImg2__inner {}
+        .figureImg2__inner .img1 {
+            width: 10vw;
+            position: absolute;
+            right: 11%;
+            top: 16%;
+        }
+        .figureImg2__inner .img2 {
+            width: 10vw;
+            position: absolute;
+            left: 11%;
+            bottom: 11%;
+        }
+
+        /* horizontalWrap - 가로모드 섹션 */
+        .horizontalWrap {
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        .horizontalSection {
+            overscroll-behavior: none;
+            width: 800%;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .section {
+            background: rgba(11,19,13,90%);
+            backdrop-filter: blur(10px);
+            width: 100%;
+            height: 100vh;
+            color: #fff;
+        }
+
+        /* 제목&부제&설명 영역 */
+        .section__bigtitle {
+            font-family: 'pp_eiko_italiclight';
+            color: rgba(210,227,192,15%);
+            font-size: 100px;
+            margin-left: 80px;
+        }
+        .section__title {
+            font-size: 24px;
+            position: absolute;
+            left: 0;
+            top: 35px;
+            z-index: 2;
+        }
+        .section__desc {
+            margin-top: 40px;
+            line-height: 160%;
+        }
+
+        /* section common */
+        .section__inner {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        .section__inner figure {
+            width: 60%;
+        }
+        .section__titleDescWrap {
+            position: relative;
+        }
+
+        /* section01 */
+        .section01 .section__inner {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: flex-start;
+            margin-left: 30%;
+        }
+        .section01 .section__inner figure {
+            width: 60%;
+        }
+        .section01 .section__titleDescWrap {
+            margin-top: 2vw;
+        }
+        /* section02 */
+        .section02 .section__inner {
+            height: 100vh;
+            display: flex;
+            align-content: flex-start;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .section02 .section__inner figure {
+            width: 30%;
+        }
+        .section02 .section__titleDescWrap {
+            margin-top: 25%;
+            margin-left: 4vw;
+        }
+        /* section03 */
+        .section03 .section__inner {
+            height: 100vh;
+            display: flex;
+            align-content: flex-end;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .section03 .section__inner figure {
+            width: 42%;
+        }
+        .section03 .section__titleDescWrap {
+            margin-left: 4vw;
+            padding-bottom: 25%;
+        }
+        /* section04 */
+        .section04 .section__inner {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .section04 .section__inner figure {
+            width: 42%;
+        }
+        .section04 .section__titleDescWrap {
+            margin-top: 25%;
+            margin-left: 4vw;
+        }
+
+        /* listOfMyWork */
+        .listOfMyWork__wrap {
+            display: flex;
+            justify-content: space-between;
+            height: 100vh;
+        }
+        .listOfMyWork__wrap .titleDesc {
+            width: 28%;
+            margin-left: 40px;
+            padding-top: 16vh;
+        }
+        .titleDesc > hr {
+            margin: 4vw 0;
+            height: 1px;
+            background-color: #dcdcdc;
+            border: none;
+        }
+        .titleDesc .listOfMyWork__title {
+            font-size: 4vw;
+        }
+        .titleDesc .listOfMyWork__desc {
+            line-height: 1.6;
+        }
+        .listOfMyWork__wrap .workList {
+            width: 62%;
+            margin-right: 40px;
+            overflow: hidden;
+            overflow-y: scroll;
+            margin-top: 16vh;
+            height: 70vh;
+        }
+        .workList summary {
+            padding: 2vw 1vw;
+            display: block;
+            border-bottom: 1px solid #dcdcdc;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.2s;
+            cursor: pointer;
+        }
+        .workList summary:hover {
+            background-color: #f5f5f5;
+        }
+        .first_summary {
+            border-top: 1px solid #dcdcdc;
+        }
+        summary .work__title {
+            font-size: 24px;
+        }
+        summary .work__btn {
+            background-image: url(assets/img/detail_btn.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 2vw;
+            height: 2vw;
+        }
+        .work__desc__wrap .work__img {
+            margin-top: 1vw;
+        }
+        .work__desc__wrap .work__desc {
+            display: flex;
+        }
+        .work__desc > p {
+            padding: 20px 10px 20px 10px;
+            box-sizing: border-box;
+            line-height: 1.6;
+        }
+
+        /* footer */
+        .footer__wrap {
+            width: 100%;
+            height: 200vh;
+            background: #0B130D;
+        }
+        .get__in__touch {
+            position: relative;
+        }
+        .footer__title__wrap {
+            padding-top: 8vh;
+            
+        }
+        .footer__bigtitle {
+            font-family: 'pp_eiko_italiclight';
+            color: rgba(210,227,192,15%);
+            font-size: 100px;
+            margin-left: 80px;
+            position: absolute;
+            left: 12vh;
+            top: 14vh;
+            z-index: 2;
+        }
+        .footer__title {
+            font-size: 24px;
+            color: #D1E2C0;
+            position: absolute;
+            left: 12vh;
+            top: 14vh;
+            z-index: 2;
+            padding-top: 4vh;
+        }
+        .contactImg__inner .img1 {
+            width: 10vw;
+            position: absolute;
+            left: 40vh;
+            top: 20vh;
+        }
+        .contactImg__inner .img2 {
+            width: 10vw;
+            position: absolute;
+            left: 10vh;
+            top: 45vh;
+        }
+        .contactImg__inner .img3 {
+            width: 10vw;
+            position: absolute;
+            left: 40vh;
+            top: 70vh;
+        }
+
+        .getintouch_contactme_wrap {
+            height: 100vh;
+            width: 100%;
+        }
+
+        /* contactMe */
+        .contactMe__wrap {
+            position: relative;
+        }
+        .contactMe__bigtitle {
+            font-family: 'pp_eiko_italiclight';
+            color: rgba(210,227,192,15%);
+            font-size: 100px;
+            position: absolute;
+            right: 20vh;
+            top: 40vh;
+            z-index: 2;
+        }
+        .contactMe__title {
+            font-size: 24px;
+            color: #D1E2C0;
+            position: absolute;
+            padding-right: 45vh;
+            right: 20vh;
+            top: 40vh;
+            z-index: 2;
+            padding-top: 4vh;
+        }
+        .contactMe__email {
+            color: #fff;
+            right: 16vh;
+            top: 48vh;
+            z-index: 2;
+            padding-right: 45vh;
+            padding-top: 4vh;
+            display: inline;
+            position: absolute;
+        }
+        .contactMe__email:hover {
+            text-decoration: underline;
+        }
+        .clock {
+            background-image: url(assets/img/clock.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 18vw;
+            height: 18vw;
+            position: absolute;
+            padding-right: 45vh;
+            right: 20vh;
+            top: 16vh;
+        }
+
+        /* outro */
+        .outro__wrap {
+            width: 100%;
+            height: 100vh;
+            position: absolute;
+        }
+        .outro__title__wrap {
+            background: #0B130D;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .outro__title {
+            color: #fff;
+            font-size: 8vw;
+            text-align: center;
+            z-index: 2;
+            line-height: 1.1;
+            position: relative;
+        }
+        .outro__title:nth-child(2) {
+            color: #D2E3C0;
+        }
+        .outro__copyright {
+            color: #fff;
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+        .profile__image {
+            width: 16vw;
+            height: 16vw;
+            border-radius: 50px;
+            position: relative;
+            right: -62vw;
+            bottom: 46vw;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <h1>KDE's PORTFOLIO</h1>
+    </header>
+    <!-- //header -->
+
+    <div class="scrollTop">0</div>
+    <!-- //scrollTop -->
+
+    <div class="mouse__cursor"></div>
+    <div class="mouse__cursor2"></div>
+    <!-- //mouse__cursor -->
+
+    <main id="main">
+        <section id="headerType" class="header__wrap">
+            <h2 class="header__logo">
+                <a href="#">KDE’s PORTFOLIO</a>
+            </h2>
+            <div class="header__menu">
+                <ul>
+                    <li><a href="#">WORK</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                </ul>
+            </div>
+        </section>
+        <!-- //headerType -->
+
+        <section id="introType" class="intro__wrap">
+            <div class="intro__title__wrap">
+                <div class="intro__title pp_write_book">
+                    let’s introduce
+                </div>
+                <div class="intro__title neue_world_semiultra">
+                    frontend developer’s
+                </div>
+                <div class="intro__title neue_world_thin">
+                    <em class="neue_worldCnRg">all</em> works <em class="neue_worldCnRg">of</em> portfolio
+                </div>
+            </div>
+
+            <div class="figureImg__inner">
+                <img class="img1" src="assets/img/home_figure01.png" alt="figure01">
+                <img class="img2" src="assets/img/home_figure02.png" alt="figure02">
+                <img class="img3" src="assets/img/home_figure03.png" alt="figure03">
+            </div>
+
+            <a href="#" class="scroll__btn"><span class="ir">Scroll Down / 스크롤다운</span></a>
+        </section>
+        <!-- //introType -->
+
+        <div class="black">
+            <section id="webglType" class="webgl__wrap">
+                <iframe class="webgl__iframe" src="webGL/webGL01.html" frameborder="0" allowfullscreen=""></iframe>
+                <div class="webgl__title__wrap">
+                    <h3 class="webgl__title neue_world_semiultra">
+                        all site works
+                    </h3>
+                </div>
+            </section>
+            <!-- //webglType - all site works -->
+    
+            <section id="myWorkPhp" class="myWorkPhp__wrap">
+                <div class="myWorkPhp__inner">
+                    <figure>
+                        <img src="assets/img/mywork01.png" alt="PHP Team Project / PHP 팀 프로젝트 : 지구ON">
+                    </figure>
+                    <div class="myWork__titleDescWrap">
+                        <h2 class="myWork__bigtitle">PHP</h2>
+                        <h3 class="myWork__title">PHP Team Project</h3>
+                        <p class="myWork__desc">
+                            기후위기에 대한 심각성을 알리고 기후<br>
+                            행동을 장려하는 웹 사이트 ‘지구ON’을<br>
+                            팀 프로젝트로 제작하였습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- //myWorkPhp -->
+    
+            <section id="myWorkWebStan" class="myWorkWebStan__wrap">
+                <div class="myWorkWebStan__inner">
+                    <figure>
+                        <img src="assets/img/mywork02.png" alt="Web Standard Site / 웹 표준을 준수하여 제작한 웹사이트 : 별빛제빵교실">
+                    </figure>
+                    <div class="myWork__titleDescWrap">
+                        <h2 class="myWork__bigtitle">Standard</h2>
+                        <h3 class="myWork__title">Web Standard Site</h3>
+                        <p class="myWork__desc">
+                            Alt 속성과 IR 효과 등을 활용하여 시각<br>
+                            장애인을 포함한 누구나 웹서핑을 할 수<br>
+                            있도록 웹 표준을 준수한 사이트입니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- //myWorkWebStan -->
+    
+            <section id="myWorkRefer" class="myWorkRefer__wrap">
+                <div class="myWorkRefer__inner">
+                    <figure>
+                        <img src="assets/img/mywork03.png" alt="Coding Reference Book / 코딩 레퍼런스 북">
+                    </figure>
+                    <div class="myWork__titleDescWrap">
+                        <h2 class="myWork__bigtitle">Reference</h2>
+                        <h3 class="myWork__title">Coding Reference Book</h3>
+                        <p class="myWork__desc">
+                            코딩을 처음 배웠던 시절 저에게 큰 도움이<br>
+                            되었던 온라인 상의 레퍼런스 북입니다.<br>
+                            HTML과 CSS, JS의 기초를 다뤘습니다.
+                        </p>
+                        <p class="myWork__desc2">
+                            HTML 태그 총 134개, CSS 속성 총 382개, 그리고 자바스크립트의 수많은 공식들…,<br>
+                            어찌나 공부해야 할 것이 많은지, 정리해두지 않으면 시간이 아무리 지나도 저의 코딩<br>
+                            울렁증은 도저히 극복할 수 없을 것 같았어요. 코딩 초보시절 직접 공부하고 정리하며<br>
+                            만든 레퍼런스 북은 더 이상 코딩이 두렵지 않은 지금의 저를 만들어주었습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- //myWorkRefer -->
+    
+            <section id="myWorkReactVue" class="myWorkReactVue__wrap">
+                <div class="myWorkReactVue__inner">
+                    <figure>
+                        <img src="assets/img/mywork04.png" alt="React/Vue Site / 리액트 & 뷰 사이트">
+                    </figure>
+                    <div class="myWork__titleDescWrap">
+                        <h2 class="myWork__bigtitle">React/Vue</h2>
+                        <h3 class="myWork__title">React/Vue Site</h3>
+                        <p class="myWork__desc">
+                            React와 Vue로 각종 정보들을 API로 가져오는 웹 사이트를 만들어 보았습니다.<br>
+                            YouTube의 인기 영상들을 불러오고, 최근 개봉한 영화 정보를 불러오고, Unsplash에서<br>
+                            새로운 이미지들을 불러오는 등 다양하고 유용한 기능들을 제공합니다. 동일한 내용의<br>
+                            사이트를 React와 Vue라는 비슷하면서도 서로 엄연히 다른 언어로 코딩해보는 과정은<br>
+                            마크업만 해왔던 제게 낯선 이 두 언어를 익힐 수 있었던 귀중한 시간이었습니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <!-- //myWorkReactVue -->
+        </div>
+
+        <section id="intro2Type" class="intro2__type">
+            <div class="intro2__title__wrap">
+                <div class="intro2__title neue_world_semiultra">
+                    frontend developer
+                </div>
+                <div class="intro2__title neue_world_thin">
+                    portfolio <em class="neue_worldCnRg">all</em> walks <em class="neue_worldCnRg">of</em> life
+                </div>
+            </div>
+
+            <div class="figureImg2__inner">
+                <img class="img1" src="assets/img/home_figure02.png" alt="figure01">
+                <img class="img2" src="assets/img/home_figure03.png" alt="figure02">
+            </div>
+        </section>
+        <!-- //intro2Type -->
+
+        <div class="horizontalWrap">
+            <div class="horizontalSection">
+                <section id="webglType" class="webgl__wrap">
+                    <iframe class="webgl__iframe" src="webGL/webGL01.html" frameborder="0" allowfullscreen=""></iframe>
+                </section>
+                <!-- //webglType - all site works -->
+
+                <div class="webgl__title__wrap section">
+                    <h3 class="webgl__title neue_world_semiultra">
+                        all script works
+                    </h3>
+                </div>
+
+                <section id="section01" class="section section01">
+                    <div class="section__inner">
+                        <figure>
+                            <img src="assets/img/mywork02.png" alt="Game Effect / 게임 이펙트">
+                        </figure>
+                        <div class="section__titleDescWrap">
+                            <h2 class="section__bigtitle">Game</h2>
+                            <h3 class="section__title">Game Effect</h3>
+                            <p class="section__desc">
+                                첫 페이지는 컴퓨터 바탕화면 GUI처럼 디자인하였고, 바탕화면에 배치된 각각의<br>
+                                아이콘을 클릭하여 음악을 듣거나 게임을 플레이 할 수 있도록 코딩하였습니다.<br>
+                                게임에는 3가지가 있으며 테트리스 게임, CSS 속성을 검색하여 점수를 얻는 서치<br>
+                                게임, 그리고 재미있는 카드 게임이 준비되어 있습니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section01 -->
+
+                <section id="section02" class="section section02">
+                    <div class="section__inner">
+                        <figure>
+                            <img src="assets/img/mywork03.png" alt="Parallax Effect / 패럴랙스 이펙트">
+                        </figure>
+                        <div class="section__titleDescWrap">
+                            <h2 class="section__bigtitle">Parallax</h2>
+                            <h3 class="section__title">Parallax Effect</h3>
+                            <p class="section__desc">
+                                시차를 두고 부드러운 애니메이션 움직임을 주는 패럴럭스 이펙트입니다.<br>
+                                특정 섹션 이동 시의 움직임을 스무스하게 해주었고, 콘텐츠(내용물)의 제목과<br>
+                                본문, 이미지가 각각 다른 시차를 두고 독특한 방식으로 등장하여 웹서핑을 하면서<br>
+                                생동감을 느낄 수 있도록 총 7가지의 유형으로 열심히 만들어보았습니다. 
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section02 -->
+
+                <section id="section03" class="section section03">
+                    <div class="section__inner">
+                        <figure>
+                            <img src="assets/img/mywork04.png" alt="Slider Effect / 슬라이드 이펙트">
+                        </figure>
+                        <div class="section__titleDescWrap">
+                            <h2 class="section__bigtitle">Slider</h2>
+                            <h3 class="section__title">Slider Effect</h3>
+                            <p class="section__desc">
+                                슬라이드 이펙트는 기본 트랜지션 효과와 좌측으로 이동하는 유형, 연속적으로<br>
+                                이동하는 유형, 좌우 이동 버튼이 있는 유형, 버튼과 닷메뉴가 있는 유형 등 총<br>
+                                7가지의 유형을 만들어보았습니다. 처음에는 많이 어려웠지만 차근차근 스크립트<br>
+                                에 대한 설명을 적어가며 공부하면서 열심히 만들었습니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section03 -->
+
+                <section id="section04" class="section section04">
+                    <div class="section__inner">
+                        <figure>
+                            <img src="assets/img/mywork05.png" alt="Mouse Effect / 마우스 이펙트">
+                        </figure>
+                        <div class="section__titleDescWrap">
+                            <h2 class="section__bigtitle">Mouse</h2>
+                            <h3 class="section__title">Mouse Effect</h3>
+                            <p class="section__desc">
+                                마우스 커서를 올려놓는 요소에 따라 커서의 모양을 다르게 하거나,<br>
+                                마우스 커서의 움직임을 조금 더 부드럽고 스무스하게 만들고, 마우스 커서의 동작을<br>
+                                독특한 애니메이션으로 생동감을 주는 등의 다양한 마우스 이펙트를 자바스크립트와<br>
+                                GSAP을 통해 만들어 보았습니다.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- //section04 -->
+                
+                <div class="webgl__title__wrap section">
+                    <h3 class="webgl__title neue_world_semiultra">
+                        all works details
+                    </h3>
+                </div>
+                <!-- //webgltitle -->
+            </div>
+        </div>
+        <!-- //horizontalWrap -->
+        
+        <div class="black">
+            <section id="listOfMyWork" class="listOfMyWork__wrap">
+                <div class="titleDesc">
+                    <h3 class="listOfMyWork__title pp_eiko_medium">LIST OF MY WORK</h3>
+                    <hr>
+                    <p class="listOfMyWork__desc">
+                        국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.<br>
+                        6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,<br>
+                        코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                        성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                        열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                    </p>
+                </div>
+                <div class="workList">
+                    <details>
+                        <summary class="first_summary">
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품01 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품02 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품03 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품04 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품05 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품06 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품07 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품08 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품09 -->
+    
+                    <details>
+                        <summary>
+                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <div class="work__btn">
+                                <span class="ir">자세히 보기</span>
+                            </div>
+                        </summary>
+                        <div class="work__desc__wrap">
+                            <figure class="work__img">
+                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                            </figure>
+                            <div class="work__desc">
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                                <p>
+                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
+                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
+                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
+                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
+                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+                    <!-- //작품10 -->
+                </div>
+            </section>
+            <!-- //listOfMyWork -->
+        </div>
+    </main>
+    <!-- //main -->
+    
+    <footer id="footer" class="footer__wrap">
+        <div class="getintouch_contactme_wrap">
+            <section id="getInTouch" class="get__in__touch">
+                <div class="footer__title__wrap">
+                    <h2 class="footer__bigtitle">Get In Touch</h2>
+                    <h3 class="footer__title">Get In Touch</h3>
+                </div>
+                <div class="contactImg__inner">
+                    <img class="img1" src="assets/img/contact_figure01.png" alt="My Gituhb">
+                    <img class="img2" src="assets/img/contact_figure02.png" alt="My Tistory Blog">
+                    <img class="img3" src="assets/img/contact_figure03.png" alt="My Codepen">
+                </div>
+            </section>
+            <!-- //getInTouch -->
+    
+            <section id="contactMe" class="contactMe__wrap">
+                <div class="contactMe__title__wrap">
+                    <h2 class="contactMe__bigtitle">Contact Me</h2>
+                    <h3 class="contactMe__title">Contact Me</h3>
+                    <a href="mailto:kde66034@gmail.com">
+                        <p class="contactMe__email">kde66034@gmail.com</p>
+                    </a>
+                </div>
+                <div class="clock"></div>
+            </section>
+            <!-- //contactMe -->
+        </div>
+
+        <section id="outro" class="outro__wrap">
+            <div class="outro__title__wrap">
+                <div class="outro__title neue_world_thin">
+                    <em class="neue_worldCnRg">thank</em> you for <em class="neue_worldCnRg">watching</em> 
+                </div>
+                <div class="outro__title neue_world_semiultra">
+                    KDE’s Portfolio
+                </div>
+                <div class="outro__copyright">
+                    ©2022 KDE All Rights Reserved
+                </div>
+            </div>
+            <div class="profile__image">
+                <img src="assets/img/profile01.png" alt="프로필 사진">
+            </div>
+        </section>
+    </footer>
+
+    <!-- JAVASCRIPT - 스크롤탑값 표시 -->
+    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        const s = skrollr.init();
+
+        function scroll() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
+
+            // document.querySelector(".sec1_text1").style.marginLeft = scrollTop + "px";
+
+            requestAnimationFrame(scroll);
+        }
+        scroll();
+    </script>
+
+    <!-- 가로모드 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        const sections = gsap.utils.toArray(".section");
+
+        gsap.to(sections, {
+            xPercent: -100 * (sections.length),
+            ease: "none",
+            scrollTrigger: {
+                trigger: ".horizontalWrap",
+                pin: true,
+                scrub: 1,
+                end: "+=4000",
+                markers: false,
+            },
+        });
+    </script>
+
+    <!-- 마우스 커서 -->
+    <script>
+        const cursor = document.querySelector(".mouse__cursor");
+        const figure = document.querySelectorAll("figure");
+        const black = document.querySelectorAll(".black")
+
+        window.addEventListener("mousemove", e => {
+            // GSAP
+            gsap.to(cursor, {duration: 0.3, left: e.pageX -15, top:e.pageY -15});
+        
+            // 오버 효과
+            // mouseenter / mouseover / 이벤트 버블링
+            figure.forEach(figure => {
+                figure.addEventListener("mouseenter", () => {
+                    cursor.classList.add("active");
+                });
+                figure.addEventListener("mouseleave", () => {
+                    cursor.classList.remove("active");
+                });
+            });
+
+            // 오버 효과 2 - 흰색배경에서 블랙 커서로
+            black.forEach(black => {
+                black.addEventListener("mouseenter", () => {
+                    cursor.classList.add("black");
+                });
+                black.addEventListener("mouseleave", () => {
+                    cursor.classList.remove("black");
+                });
+            });
+        });
+    </script>
+</body>
+</html>
