@@ -18,6 +18,14 @@
         #header {
             display: none;
         }
+        iframe{
+          pointer-events:none;
+        }
+
+        body {
+            overscroll-behavior: none;
+            overflow: visible;
+        }
 
         .scrollTop {
             position: fixed;
@@ -45,8 +53,8 @@
             position: absolute;
             left: 0;
             top: 0;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             z-index: 9999;
             border-radius: 50%;
             background: rgba(255, 255, 255, 50%);
@@ -55,15 +63,15 @@
             transition: transform 0.3s, opacity 0.2s;
         }
         .mouse__cursor.active {
-            transform: scale(5);
+            transform: scale(3);
             background: rgba(0, 0, 0, 50%);
         }
         .mouse__cursor.black {
             position: absolute;
             left: 0;
             top: 0;
-            width: 30px;
-            height: 30px;
+            width: 20px;
+            height: 20px;
             z-index: 9999;
             border-radius: 50%;
             background: rgba(0, 0, 0, 50%);
@@ -280,7 +288,7 @@
             flex-direction: column;
             margin-left: 35vw;
             margin-top: 10vw;
-            margin-bottom: 10vw;
+            padding-bottom: 10vw;
         }
         .myWorkReactVue__inner figure {
             width: 70%;
@@ -1307,6 +1315,7 @@
     </footer>
 
     <!-- JAVASCRIPT - 스크롤탑값 표시 -->
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
     <script>
         const s = skrollr.init();
@@ -1421,6 +1430,25 @@
             });
           });
         });
+    </script>
+
+    <!-- 스무스 효과 -->
+    <script>
+        // lenis 효과
+        const lenis = new Lenis({
+            duration: 2,
+            // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            // direction: 'vertical', // vertical, horizontal
+            // gestureDirection: 'vertical', // vertical, horizontal, both
+        })
+        //get scroll value
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
     </script>
 </body>
 </html>
