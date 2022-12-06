@@ -129,7 +129,12 @@
             align-items: center;
             flex-direction: column;
         }
-        .intro__title__wrap {}
+        .intro__title__wrap {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+        }
         .intro__title {
             color: #fff;
             font-size: 8vw;
@@ -170,6 +175,8 @@
             background-repeat: no-repeat;
             background-size: cover;
             margin: 0 auto;
+            position: absolute;
+            bottom: 3vw;
         }
 
         /* webglType */
@@ -456,7 +463,6 @@
         .listOfMyWork__wrap {
             display: flex;
             justify-content: space-between;
-            height: 100vh;
         }
         .listOfMyWork__wrap .titleDesc {
             width: 28%;
@@ -478,10 +484,8 @@
         .listOfMyWork__wrap .workList {
             width: 62%;
             margin-right: 40px;
-            overflow: hidden;
-            overflow-y: scroll;
             margin-top: 16vh;
-            height: 70vh;
+            margin-bottom: 16vh;
         }
         .workList summary {
             padding: 2vw 1vw;
