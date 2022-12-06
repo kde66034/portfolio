@@ -18,13 +18,8 @@
         #header {
             display: none;
         }
-        iframe{
+        iframe {
           pointer-events:none;
-        }
-
-        body {
-            overscroll-behavior: none;
-            overflow: visible;
         }
 
         .scrollTop {
@@ -362,7 +357,7 @@
         }
         .horizontalSection {
             overscroll-behavior: none;
-            width: 800%;
+            width: 600%;
             display: flex;
             flex-wrap: nowrap;
         }
@@ -1314,9 +1309,35 @@
         </section>
     </footer>
 
-    <!-- JAVASCRIPT - 스크롤탑값 표시 -->
+    <!-- SCRIPT -->
+    <!-- gsap : 스크립트 애니메이션을 위한 도구 모음 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
+
+    <!-- Smooth Scroll 효과 -->
     <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
+    <script>
+        // lenis 효과
+        const lenis = new Lenis({
+            duration: 2,
+            // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+            // direction: 'vertical', // vertical, horizontal
+            // gestureDirection: 'vertical', // vertical, horizontal, both
+        })
+        //get scroll value
+        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
+        })
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    </script>
+
+    <!-- ScrollTrigger 플러그인 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
+    
+    <!-- JAVASCRIPT - 스크롤탑값 표시 -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
     <script>
         const s = skrollr.init();
 
@@ -1330,11 +1351,9 @@
             requestAnimationFrame(scroll);
         }
         scroll();
-    </script>
+    </script> -->
 
     <!-- 가로모드 -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script>
     <script>
         gsap.registerPlugin(ScrollTrigger);
 
@@ -1430,25 +1449,6 @@
             });
           });
         });
-    </script>
-
-    <!-- 스무스 효과 -->
-    <script>
-        // lenis 효과
-        const lenis = new Lenis({
-            duration: 2,
-            // easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-            // direction: 'vertical', // vertical, horizontal
-            // gestureDirection: 'vertical', // vertical, horizontal, both
-        })
-        //get scroll value
-        lenis.on('scroll', ({ scroll, limit, velocity, direction, progress }) => {
-        })
-        function raf(time) {
-            lenis.raf(time)
-            requestAnimationFrame(raf)
-        }
-        requestAnimationFrame(raf)
     </script>
 </body>
 </html>
