@@ -490,6 +490,7 @@
         }
         .titleDesc .listOfMyWork__title {
             font-size: 4vw;
+            line-height: 1.2;
         }
         .titleDesc .listOfMyWork__desc {
             line-height: 1.6;
@@ -513,19 +514,38 @@
         .workList summary:hover {
             background-color: #f5f5f5;
         }
+        details[open] summary {
+            background-color: #f5f5f5;
+        }
         .first_summary {
             border-top: 1px solid #dcdcdc;
         }
         summary .work__title {
             font-size: 24px;
         }
-        summary .work__btn {
+        /* summary .work__btn {
             background-image: url(assets/img/detail_btn.svg);
             background-position: center center;
             background-repeat: no-repeat;
             background-size: contain;
             width: 2vw;
             height: 2vw;
+            transition: transform 0.3s;
+        } */
+        summary .work__btn {
+            background: #262626;
+            background-image: url(assets/img/detail_btn.svg);
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 2vw;
+            height: 2vw;
+            border-radius: 50px;
+            transition: transform 0.3s;
+        }
+
+        details[open] .work__btn {
+            transform: rotate(180deg);
         }
         .work__desc__wrap .work__img {
             margin-top: 1vw;
@@ -960,7 +980,7 @@
                     </p>
                 </div>
                 <div class="workList">
-                    <details>
+                    <details class="details">
                         <summary class="first_summary">
                             <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
                             <div class="work__btn">
@@ -988,7 +1008,7 @@
                     </details>
                     <!-- //작품01 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
                             <h4 class="work__title pp_neue_montreal">PHP Team Project</h4>
                             <div class="work__btn">
@@ -1013,7 +1033,7 @@
                     </details>
                     <!-- //작품02 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
                             <h4 class="work__title pp_neue_montreal">React API Web Site</h4>
                             <div class="work__btn">
@@ -1038,7 +1058,7 @@
                     </details>
                     <!-- //작품03 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
                             <h4 class="work__title pp_neue_montreal">React YouTube API</h4>
                             <div class="work__btn">
@@ -1064,7 +1084,7 @@
                     </details>
                     <!-- //작품04 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
                             <h4 class="work__title pp_neue_montreal">Vue API Web Site</h4>
                             <div class="work__btn">
@@ -1089,160 +1109,54 @@
                     </details>
                     <!-- //작품05 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
-                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <h4 class="work__title pp_neue_montreal">React API Team Project</h4>
                             <div class="work__btn">
                                 <span class="ir">자세히 보기</span>
                             </div>
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="React API Team Project">
                             </figure>
                             <div class="work__desc">
                                 <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                    React를 이용한 첫 팀 프로젝트 작품입니다. 사이트 이름은 「World Weather」이며 전세계의 날씨 정보를 가져오는 사이트입니다. 
+                                    페이지 우측 상단에 검색창이 있으며 해당 검색창에 도시명을 영어로 입력한 다음 엔터키를 누르거나 검색 버튼을 누르면 해당 지역의
+                                    날씨 정보를 가져오며, 해당 지역의 현재 날씨와 시간대(낮 또는 밤)에 맞게 배경 이미지가 변화합니다. 가져오는 날씨 정보는
+                                    현재의 기온과 금일의 최고·최저기온 및 체감기온, 습도, 가시거리 등이 있으며 API 정보는 axios 방식으로 OpenWeatherMap을 통해 가져왔습니다. 
+                                    React를 팀 프로젝트로 도전하는 것은 처음이었기 때문에 많은 시행착오를 겪었지만 무사히 결과물이 나올 수 있었으며 이번 경험을 통해
+                                    실무에서도 React를 쓸 수 있는 역량을 갖추게 되었기 때문에 굉장히 의미 있는 시간이었습니다.
                                 </p>
                             </div>
                         </div>
                     </details>
                     <!-- //작품06 -->
     
-                    <details>
+                    <details class="details">
                         <summary>
-                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
+                            <h4 class="work__title pp_neue_montreal">PHP Blog</h4>
                             <div class="work__btn">
                                 <span class="ir">자세히 보기</span>
                             </div>
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="PHP Blog">
                             </figure>
                             <div class="work__desc">
                                 <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
+                                    PHP를 이용하여 블로그 웹사이트를 만들어보았습니다. 메인 페이지와 회원 가입, 로그인, 게시판, 블로그, 마이 페이지 등으로 사이트가
+                                    구성되어 있으며 처음에는 HTML 마크업부터 시작하였고, 그 다음 게시판, 블로그, 회원, 댓글 테이블 등 데이터를 저장시킬 공간을 만들었습니다. 
+                                    그런 다음 본격적으로 PHP 코딩을 시작하여 진짜 존재하는 사이트처럼 글쓰기와 글 수정, 댓글 작성 및 삭제 등의 기능을 구현했고
+                                    완성된 결과물을 Dothome에 업로드하여 완성했습니다. PHP는 어떻게 보면 눈에 보이지 않는 서버 쪽을 담당하는 백엔드 영역인지라 굉장히 어렵게
+                                    느껴졌지만 이 작품을 공부하며 만들면서 낯설기만 했던 PHP와 친해질 수 있었던 귀중한 시간이었습니다.
                                 </p>
                             </div>
                         </div>
                     </details>
                     <!-- //작품07 -->
-    
-                    <details>
-                        <summary>
-                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
-                            <div class="work__btn">
-                                <span class="ir">자세히 보기</span>
-                            </div>
-                        </summary>
-                        <div class="work__desc__wrap">
-                            <figure class="work__img">
-                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
-                            </figure>
-                            <div class="work__desc">
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                            </div>
-                        </div>
-                    </details>
-                    <!-- //작품08 -->
-    
-                    <details>
-                        <summary>
-                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
-                            <div class="work__btn">
-                                <span class="ir">자세히 보기</span>
-                            </div>
-                        </summary>
-                        <div class="work__desc__wrap">
-                            <figure class="work__img">
-                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
-                            </figure>
-                            <div class="work__desc">
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                            </div>
-                        </div>
-                    </details>
-                    <!-- //작품09 -->
-    
-                    <details>
-                        <summary>
-                            <h4 class="work__title pp_neue_montreal">Standard Web Site</h4>
-                            <div class="work__btn">
-                                <span class="ir">자세히 보기</span>
-                            </div>
-                        </summary>
-                        <div class="work__desc__wrap">
-                            <figure class="work__img">
-                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
-                            </figure>
-                            <div class="work__desc">
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                                <p>
-                                    국비 코딩학원에서 수강하던 시절 부지런히 만든 작품들입니다.
-                                    6개월이 넘는 기간동안 열심히 공부하며 만든 저의 보물같은 존재들이며,
-                                    코딩 초보시절 ‘코딩 울렁증’을 앓고 있던 제게 이 작품들은 뿌듯함과 
-                                    성취감을 안겨주고 두려워했던 코딩과 친해질 수 있는 계기를 만들어주었습니다. 
-                                    열심히 만든 만큼 꼼꼼히 봐주셨으면 좋겠습니다. 감사합니다!
-                                </p>
-                            </div>
-                        </div>
-                    </details>
-                    <!-- //작품10 -->
                 </div>
             </section>
             <!-- //listOfMyWork -->
@@ -1436,6 +1350,126 @@
                 //   onLeave: function() { hide(elem) } // assure that the element is hidden when scrolled into view
                 });
             });
+        });
+    </script>
+
+    <!-- Details 펼칠 때 애니메이션 -->
+    <script>
+        class Accordion {
+          constructor(el) {
+            // Store the <details> element
+            this.el = el;
+            // Store the <summary> element
+            this.summary = el.querySelector('summary');
+            // Store the <div class="content"> element
+            this.content = el.querySelector('.work__desc__wrap');
+            
+            // Store the animation object (so we can cancel it if needed)
+            this.animation = null;
+            // Store if the element is closing
+            this.isClosing = false;
+            // Store if the element is expanding
+            this.isExpanding = false;
+            // Detect user clicks on the summary element
+            this.summary.addEventListener('click', (e) => this.onClick(e));
+          }
+      
+          onClick(e) {
+            // Stop default behaviour from the browser
+            e.preventDefault();
+            // Add an overflow on the <details> to avoid content overflowing
+            this.el.style.overflow = 'hidden';
+            // Check if the element is being closed or is already closed
+            if (this.isClosing || !this.el.open) {
+              this.open();
+            // Check if the element is being openned or is already open
+            } else if (this.isExpanding || this.el.open) {
+              this.shrink();
+            }
+          }
+      
+          shrink() {
+            // Set the element as "being closed"
+            this.isClosing = true;
+
+            // Store the current height of the element
+            const startHeight = `${this.el.offsetHeight}px`;
+            // Calculate the height of the summary
+            const endHeight = `${this.summary.offsetHeight}px`;
+
+            // If there is already an animation running
+            if (this.animation) {
+              // Cancel the current animation
+              this.animation.cancel();
+            }
+
+            // Start a WAAPI animation
+            this.animation = this.el.animate({
+              // Set the keyframes from the startHeight to endHeight
+              height: [startHeight, endHeight]
+            }, {
+              duration: 400,
+              easing: 'ease-out'
+            });
+
+            // When the animation is complete, call onAnimationFinish()
+            this.animation.onfinish = () => this.onAnimationFinish(false);
+            // If the animation is cancelled, isClosing variable is set to false
+            this.animation.oncancel = () => this.isClosing = false;
+          }
+      
+          open() {
+            // Apply a fixed height on the element
+            this.el.style.height = `${this.el.offsetHeight}px`;
+            // Force the [open] attribute on the details element
+            this.el.open = true;
+            // Wait for the next frame to call the expand function
+            window.requestAnimationFrame(() => this.expand());
+          }
+      
+          expand() {
+            // Set the element as "being expanding"
+            this.isExpanding = true;
+            // Get the current fixed height of the element
+            const startHeight = `${this.el.offsetHeight}px`;
+            // Calculate the open height of the element (summary height + content height)
+            const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
+
+            // If there is already an animation running
+            if (this.animation) {
+              // Cancel the current animation
+              this.animation.cancel();
+            }
+
+            // Start a WAAPI animation
+            this.animation = this.el.animate({
+              // Set the keyframes from the startHeight to endHeight
+              height: [startHeight, endHeight]
+            }, {
+              duration: 400,
+              easing: 'ease-out'
+            });
+            // When the animation is complete, call onAnimationFinish()
+            this.animation.onfinish = () => this.onAnimationFinish(true);
+            // If the animation is cancelled, isExpanding variable is set to false
+            this.animation.oncancel = () => this.isExpanding = false;
+          }
+      
+          onAnimationFinish(open) {
+            // Set the open attribute based on the parameter
+            this.el.open = open;
+            // Clear the stored animation
+            this.animation = null;
+            // Reset isClosing & isExpanding
+            this.isClosing = false;
+            this.isExpanding = false;
+            // Remove the overflow hidden and the fixed height
+            this.el.style.height = this.el.style.overflow = '';
+          }
+        }
+
+        document.querySelectorAll('details').forEach((el) => {
+          new Accordion(el);
         });
     </script>
 </body>
