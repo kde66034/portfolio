@@ -22,6 +22,16 @@
           pointer-events:none;
         }
 
+        figure {
+            overflow: hidden;
+        }
+        .image__box a img {
+            transition: all 0.5s ease;
+        }
+        .image__box:hover a img {
+            transform: scale(1.05);
+        }
+
         .scrollTop {
             position: fixed;
             left: 10px;
@@ -726,21 +736,23 @@
         </section>
         <!-- //introType -->
 
+        <section id="webglType" class="webgl__wrap">
+            <iframe class="webgl__iframe" src="webGL/webGL01.html" frameborder="0" allowfullscreen=""></iframe>
+            <div class="webgl__title__wrap">
+                <h3 class="webgl__title neue_world_semiultra gs_reveal gs_reveal_fromLeft">
+                    all site works
+                </h3>
+            </div>
+        </section>
+        <!-- //webglType - all site works -->
+
         <div class="black">
-            <section id="webglType" class="webgl__wrap">
-                <iframe class="webgl__iframe" src="webGL/webGL01.html" frameborder="0" allowfullscreen=""></iframe>
-                <div class="webgl__title__wrap">
-                    <h3 class="webgl__title neue_world_semiultra gs_reveal gs_reveal_fromLeft">
-                        all site works
-                    </h3>
-                </div>
-            </section>
-            <!-- //webglType - all site works -->
-    
             <section id="myWorkPhp" class="myWorkPhp__wrap">
                 <div class="myWorkPhp__inner">
-                    <figure class="gs_reveal gs_reveal_fromLeft">
-                        <img src="assets/img/mywork01.png" alt="PHP Team Project / PHP 팀 프로젝트 : 지구ON">
+                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                        <a href="http://kde9902.dothome.co.kr/php/main/main.php" target="_blank">
+                            <img src="assets/img/mywork01.jpg" alt="PHP Team Project / PHP 팀 프로젝트 : 지구ON">
+                        </a>
                     </figure>
                     <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
                         <h2 class="myWork__bigtitle">PHP</h2>
@@ -757,8 +769,10 @@
     
             <section id="myWorkWebStan" class="myWorkWebStan__wrap">
                 <div class="myWorkWebStan__inner">
-                    <figure class="gs_reveal gs_reveal_fromRight">
-                        <img src="assets/img/mywork02.png" alt="Web Standard Site / 웹 표준을 준수하여 제작한 웹사이트 : 별빛제빵교실">
+                    <figure class="image__box gs_reveal gs_reveal_fromRight">
+                        <a href="https://kde66034.github.io/codingclass/site/site1/index.html" target="_blank">
+                            <img src="assets/img/mywork02.jpg" alt="Web Standard Site / 웹 표준을 준수하여 제작한 웹사이트 : 별빛제빵교실">
+                        </a>
                     </figure>
                     <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromLeft">
                         <h2 class="myWork__bigtitle">Standard</h2>
@@ -775,8 +789,10 @@
     
             <section id="myWorkRefer" class="myWorkRefer__wrap">
                 <div class="myWorkRefer__inner">
-                    <figure class="gs_reveal gs_reveal_fromLeft">
-                        <img src="assets/img/mywork03.png" alt="Coding Reference Book / 코딩 레퍼런스 북">
+                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                        <a href="https://kde66034.github.io/codingclass/javascript/index.html" target="_blank">
+                            <img src="assets/img/mywork03.jpg" alt="Coding Reference Book / 코딩 레퍼런스 북">
+                        </a>
                     </figure>
                     <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
                         <h2 class="myWork__bigtitle">Reference</h2>
@@ -799,8 +815,8 @@
     
             <section id="myWorkReactVue" class="myWorkReactVue__wrap">
                 <div class="myWorkReactVue__inner">
-                    <figure class="gs_reveal gs_reveal_fromLeft">
-                        <img src="assets/img/mywork04.png" alt="React/Vue Site / 리액트 & 뷰 사이트">
+                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                        <img src="assets/img/mywork04.jpg" alt="React/Vue Site / 리액트 & 뷰 사이트">
                     </figure>
                     <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
                         <h2 class="myWork__bigtitle">React/Vue</h2>
@@ -850,7 +866,7 @@
                 <section id="section01" class="section section01">
                     <div class="section__inner">
                         <figure>
-                            <img src="assets/img/mywork02.png" alt="Game Effect / 게임 이펙트">
+                            <img src="assets/img/mywork02.jpg" alt="Game Effect / 게임 이펙트">
                         </figure>
                         <div class="section__titleDescWrap">
                             <h2 class="section__bigtitle">Game</h2>
@@ -869,7 +885,7 @@
                 <section id="section02" class="section section02">
                     <div class="section__inner">
                         <figure>
-                            <img src="assets/img/mywork03.png" alt="Parallax Effect / 패럴랙스 이펙트">
+                            <img src="assets/img/mywork03.jpg" alt="Parallax Effect / 패럴랙스 이펙트">
                         </figure>
                         <div class="section__titleDescWrap">
                             <h2 class="section__bigtitle">Parallax</h2>
@@ -888,7 +904,7 @@
                 <section id="section03" class="section section03">
                     <div class="section__inner">
                         <figure>
-                            <img src="assets/img/mywork04.png" alt="Slider Effect / 슬라이드 이펙트">
+                            <img src="assets/img/mywork04.jpg" alt="Slider Effect / 슬라이드 이펙트">
                         </figure>
                         <div class="section__titleDescWrap">
                             <h2 class="section__bigtitle">Slider</h2>
@@ -907,7 +923,7 @@
                 <section id="section04" class="section section04">
                     <div class="section__inner">
                         <figure>
-                            <img src="assets/img/mywork05.png" alt="Mouse Effect / 마우스 이펙트">
+                            <img src="assets/img/mywork05.jpg" alt="Mouse Effect / 마우스 이펙트">
                         </figure>
                         <div class="section__titleDescWrap">
                             <h2 class="section__bigtitle">Mouse</h2>
@@ -956,7 +972,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -987,7 +1003,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1018,7 +1034,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1049,7 +1065,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1080,7 +1096,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1111,7 +1127,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1142,7 +1158,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1173,7 +1189,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1204,7 +1220,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
@@ -1235,7 +1251,7 @@
                         </summary>
                         <div class="work__desc__wrap">
                             <figure class="work__img">
-                                <img src="assets/img/mywork01.png" alt="Standard Web Site">
+                                <img src="assets/img/mywork01.jpg" alt="Standard Web Site">
                             </figure>
                             <div class="work__desc">
                                 <p>
