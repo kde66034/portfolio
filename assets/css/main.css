@@ -1,0 +1,108 @@
+/* myWorkPhp */
+.myWorkPhp__wrap {
+    width: 100%;
+    background: #fff;
+}
+.myWorkPhp__inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.myWorkPhp__wrap figure {
+    width: 60%;
+    margin-right: 5vw;
+    margin-left: 2vw;
+}
+.myWork__titleDescWrap {
+    position: relative;
+}
+.myWorkPhp__wrap .myWork__titleDescWrap {
+    margin-top: 5vw;
+}
+
+/* myWorkWebStan */
+.myWorkWebStan__wrap {
+    width: 100%;
+    background: #fff;
+}
+.myWorkWebStan__inner {
+    height: 100vh;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+}
+.myWorkWebStan__wrap figure {
+    width: 62%;
+    /* margin-right: 40px; */
+    margin-left: 4vw;
+}
+.myWorkWebStan__wrap .myWork__titleDescWrap {
+    margin-top: 15vw;
+    margin-left: 2vw;
+}
+
+/* myWorkRefer */
+.myWorkRefer__wrap {
+    width: 100%;
+    background: #fff;
+}
+.myWorkRefer__inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    margin: 12vh 0;
+}
+.myWorkRefer__wrap figure {
+    width: 42%;
+    margin-right: 4vw;
+    margin-left: 2vw;
+}
+.myWorkRefer__wrap .myWork__titleDescWrap {
+    margin-top: 1vw;
+}
+.myWork__desc2 {
+    margin-top: 16vw;
+    margin-left: 15vw;
+    line-height: 160%;
+}
+
+/* myWorkReactVue */
+.myWorkReactVue__wrap {
+    width: 100%;
+    background: #fff;
+}
+.myWorkReactVue__inner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 35vw;
+    margin-top: 10vw;
+    padding-bottom: 10vw;
+}
+.myWorkReactVue__inner figure {
+    width: 70%;
+}
+.myWorkReactVue__wrap .myWork__titleDescWrap {
+    margin-top: 2vw;
+}
+
+/* 제목&부제&설명 영역 */
+.myWork__bigtitle {
+    font-family: 'pp_eiko_italiclight';
+    color: rgba(0,0,0,15%);
+    font-size: 100px;
+    margin-left: 80px;
+}
+.myWork__title {
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 2;
+}
+.myWork__desc {
+    margin-top: 2vw;
+    line-height: 160%;
+}

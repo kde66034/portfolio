@@ -1,0 +1,42 @@
+/* headerType */
+#headerType {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 9997;
+}
+.header__wrap {
+    background: #0b130dbb;
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    align-items: center;
+}
+.header__logo {
+    padding-left: 30px;
+}
+.header__logo a {
+    color: #D2E3C0;
+    font-family: 'Poppins';
+    font-weight: 200;
+    font-size: 24px;
+}
+.header__menu {
+    align-items: center;
+}
+.header__menu ul {
+    display: flex;
+    flex-wrap: wrap; 
+    padding-right: 30px;
+}
+.header__menu ul li {
+    padding-left: 20px;
+}
+.header__menu ul li a {
+    font-family: 'Poppins';
+    color: #D2E3C0;
+    font-size: 18px;
+    font-weight: 200;
+}

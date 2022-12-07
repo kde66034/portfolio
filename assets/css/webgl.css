@@ -1,0 +1,35 @@
+/* webglType */
+.webgl__wrap {
+    width: 100%;
+    height: 100vh;
+    background: #0b130d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.webgl__iframe {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+#webgl1 {
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+.webgl__title__wrap > h3 {
+    color: #D2E3C0;
+    font-size: 8vw;
+    z-index: 2;
+    position: relative;
+}
+.webgl__title2 {
+    color: #fff !important;
+}
