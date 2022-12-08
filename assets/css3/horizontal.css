@@ -4,10 +4,10 @@
     height: 100vh;
     overflow: hidden;
 }
-/* .horizontalWrap {
+.horizontalWrap {
     position: relative;
 }
-.horizontalDescWrap {
+/* .horizontalDescWrap {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -46,6 +46,7 @@
 .section__desc {
     margin-top: 40px;
     line-height: 160%;
+    color: #fff;
 }
 
 /* section common */
@@ -62,6 +63,11 @@
     width: 100%;
     height: 100vh;
     overflow: hidden;
+    position: absolute;
+    left: 4vw;
+    top: 65vh;
+    opacity: 0;
+    z-index: 2;
 }
 
 /* section01 */
