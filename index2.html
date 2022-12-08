@@ -197,7 +197,7 @@
                             all script works
                         </h3>
                     </div>
-                    <div class="section__titleDescWrap section01__desc" style="opacity: 1;">
+                    <div class="section__titleDescWrap section01__desc">
                         <h2 class="section__bigtitle">Game</h2>
                         <h3 class="section__title">Game Effect</h3>
                         <p class="section__desc">
@@ -595,8 +595,19 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
     <script>
         gsap.to('.section01__desc', {
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.section01',
+            start: 'left left',
+            end: 'right left',
+            scrub: true
+          }
+        });
+        gsap.to('.section01__desc', {
           opacity: 0,
           ease: 'none',
+          immediateRender: false,
           scrollTrigger: {
             trigger: '.section02',
             start: 'left left',
@@ -630,6 +641,27 @@
           ease: 'none',
           scrollTrigger: {
             trigger: '.section03',
+            start: 'left left',
+            end: 'right left',
+            scrub: true
+          }
+        });
+        gsap.to('.section03__desc', {
+          opacity: 0,
+          ease: 'none',
+          immediateRender: false,
+          scrollTrigger: {
+            trigger: '.section04',
+            start: 'left left',
+            end: 'right left',
+            scrub: true
+          }
+        });
+        gsap.to('.section04__desc', {
+          opacity: 1,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: '.section04',
             start: 'left left',
             end: 'right left',
             scrub: true
