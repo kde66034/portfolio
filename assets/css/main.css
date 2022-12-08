@@ -11,7 +11,7 @@
 .myWorkPhp__wrap figure {
     width: 60%;
     margin-right: 5vw;
-    margin-left: 2vw;
+    margin-left: 2vh;
 }
 .myWork__titleDescWrap {
     position: relative;
@@ -38,8 +38,8 @@
     margin-left: 4vw;
 }
 .myWorkWebStan__wrap .myWork__titleDescWrap {
-    margin-top: 15vw;
-    margin-left: 2vw;
+    margin-top: 15vh;
+    margin-left: 2vh;
 }
 
 /* myWorkRefer */
@@ -85,7 +85,7 @@
     width: 70%;
 }
 .myWorkReactVue__wrap .myWork__titleDescWrap {
-    margin-top: 2vw;
+    margin-top: 2vh;
 }
 
 /* 제목&부제&설명 영역 */
@@ -103,6 +103,6 @@
     z-index: 2;
 }
 .myWork__desc {
-    margin-top: 2vw;
+    margin-top: 2vh;
     line-height: 160%;
 }

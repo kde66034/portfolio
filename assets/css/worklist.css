@@ -63,7 +63,7 @@ summary .work__title {
 } */
 summary .work__btn {
     background: #262626;
-    background-image: url(assets/img/detail_btn.svg);
+    background-image: url(../img/detail_btn.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
