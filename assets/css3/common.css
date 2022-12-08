@@ -1,0 +1,157 @@
+/* 스킵 메뉴 */
+#skip {
+    position: relative;
+    z-index: 100000;
+}
+#skip a {
+    background: #000;
+    color: #fff;
+    position: absolute;
+    padding: 20px 40px;
+    left: -400px;
+    top: 5px;
+}
+#skip a:active,
+#skip a:focus {
+    left: 5px;
+}
+
+/* 컨테이너 */
+.container {
+    width: 100%;
+    max-width: 1160px;
+    padding: 0 20px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+/* 폰트 */
+.neue_world_semiultra {
+    font-family: 'pp_neue_worldsemiultra';
+}
+.pp_write_book {
+    font-family: 'pp_writerbook';
+}
+.neue_world_thin {
+    font-family: 'pp_neue_worldthin';
+}
+.neue_worldCnRg {
+    font-family: 'pp_neue_worldCnRg';
+}
+.pp_eiko_medium {
+    font-family: 'pp_eiko_medium';
+}
+.pp_neue_montreal {
+    font-family: 'pp_neue_montreal';
+}
+
+/* 배경 */
+.gray {
+    background-color: #f5f5f5;
+}
+
+/* fixed */
+body.fixed {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* 간격 세팅 */
+.mb0 {margin-bottom: 0 !important;}
+.mb10 {margin-bottom: 10px !important;}
+.mb20 {margin-bottom: 20px !important;}
+.mb30 {margin-bottom: 30px !important;}
+.mb40 {margin-bottom: 40px !important;}
+.mb50 {margin-bottom: 50px !important;}
+.mb60 {margin-bottom: 60px !important;}
+.mb70 {margin-bottom: 70px !important;}
+
+.mt0 {margin-top: 0 !important;}
+.mt10 {margin-top: 10px !important;}
+.mt20 {margin-top: 20px !important;}
+.mt30 {margin-top: 30px !important;}
+.mt40 {margin-top: 40px !important;}
+.mt50 {margin-top: 50px !important;}
+.mt60 {margin-top: 60px !important;}
+.mt70 {margin-top: 70px !important;}
+
+/* 반응형 container */
+@media (max-width: 960px) {
+    .container {
+        width: 96%;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        width: 96%;
+    }
+}
+
+/* ir효과 */
+.ir {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    text-indent: -9999px;
+}
+
+/* 스크롤바 */
+::-webkit-scrollbar {
+	width: 8px;  /* 세로축 스크롤바 길이 */
+	height: 8px;  /* 가로축 스크롤바 길이 */
+}
+
+::-webkit-scrollbar-track-piece {
+	background-color: #f5f5f5;	/*스크롤 바 배경 색상*/
+}
+::-webkit-scrollbar-thumb {
+	border-radius: 8px;
+	background-color: rgb(167, 167, 167); /*스크롤 바 색상*/
+}
+
+@media (max-width: 800px) {
+	::-webkit-scrollbar {
+		width: 6px;
+		height: 6px;
+	}
+}
+
+#header {
+    display: none;
+}
+iframe {
+  pointer-events:none;
+}
+
+figure {
+    overflow: hidden;
+}
+.image__box a img {
+    transition: all 0.5s ease;
+}
+.image__box:hover a img {
+    transform: scale(1.05);
+}
+
+.scrollTop {
+    position: fixed;
+    left: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+    background: #000;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 50px;
+    z-index: 100000;
+    color: #fff;
+}
+.fixed {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3;
+}

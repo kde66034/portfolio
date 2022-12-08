@@ -1,0 +1,119 @@
+/* horizontalWrap - 가로모드 섹션 */
+.horizontalWrap {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.horizontalSection {
+    overscroll-behavior: none;
+    width: 600%;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.section {
+    /* background: rgba(11,19,13,90%); */
+    /* backdrop-filter: blur(10px); */
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+}
+
+/* 제목&부제&설명 영역 */
+.section__bigtitle {
+    font-family: 'pp_eiko_italiclight';
+    color: rgba(255, 255, 255, 0.2);
+    font-size: 100px;
+    margin-left: 80px;
+}
+.section__title {
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    z-index: 2;
+    color: #fff;
+}
+.section__desc {
+    margin-top: 40px;
+    line-height: 160%;
+}
+
+/* section common */
+.section__inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+.section__inner figure {
+    width: 60%;
+    z-index: 0;
+}
+.section__titleDescWrap {
+    position: absolute;
+    left: 5vw;
+    bottom: -5vh;
+    z-index: 10;
+    opacity: 0;
+    /* background: #999; */
+}
+
+
+/* section01 */
+/* .section01 .section__inner {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 30%;
+}
+.section01 .section__inner figure {
+    width: 60%;
+}
+.section01 .section__titleDescWrap {
+    margin-top: 2vw;
+} */
+/* section02 */
+/* .section02 .section__inner {
+    height: 100vh;
+    display: flex;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section02 .section__inner figure {
+    width: 30%;
+}
+.section02 .section__titleDescWrap {
+    margin-top: 30%;
+    margin-left: 4vw;
+} */
+/* section03 */
+/* .section03 .section__inner {
+    height: 100vh;
+    display: flex;
+    align-content: flex-end;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.section03 .section__inner figure {
+    width: 42%;
+}
+.section03 .section__titleDescWrap {
+    margin-left: 4vw;
+    padding-bottom: 25%;
+} */
+/* section04 */
+/* .section04 .section__inner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section04 .section__inner figure {
+    width: 42%;
+}
+.section04 .section__titleDescWrap {
+    margin-top: 25%;
+    margin-left: 4vw;
+} */
