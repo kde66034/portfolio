@@ -1,15 +1,25 @@
 /* horizontalWrap - 가로모드 섹션 */
-.horizontalWrap {
+.horizontalWrap, .horizontalDescWrap {
     width: 100%;
     height: 100vh;
     overflow: hidden;
 }
-.horizontalSection {
+/* .horizontalWrap {
+    position: relative;
+}
+.horizontalDescWrap {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+} */
+
+.horizontalSection, .horizontalSection2 {
     overscroll-behavior: none;
     width: 600%;
     display: flex;
     flex-wrap: nowrap;
 }
+
 .section {
     /* background: rgba(11,19,13,90%); */
     /* backdrop-filter: blur(10px); */
@@ -49,14 +59,10 @@
     z-index: 0;
 }
 .section__titleDescWrap {
-    position: absolute;
-    left: 5vw;
-    bottom: -5vh;
-    z-index: 10;
-    opacity: 0;
-    /* background: #999; */
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
 }
-
 
 /* section01 */
 /* .section01 .section__inner {
