@@ -53,6 +53,8 @@
     left: 5vw;
     bottom: -5vh;
     z-index: 10;
+    opacity: 0;
+    /* background: #999; */
 }
 
 
