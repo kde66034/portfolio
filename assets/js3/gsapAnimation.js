@@ -60,7 +60,7 @@ setTimeout(() => {
     let tl2 = gsap.timeline();
 
     tl.to(".webgl__title span", {trigger: "#webglType", duration: 0.6, x: 0, y: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
-    tl2.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 300, stagger: 0.09, scale: 1, opacity: 0, ease: Power4.easeOut})
+    tl2.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 160, stagger: 0.09, scale: 1, opacity: 0, ease: Power3.easeOut})
 
     ScrollTrigger.create({
         trigger: "#webglType",
@@ -77,21 +77,8 @@ setTimeout(() => {
     ScrollTrigger.create({
         trigger: "#section01",
         start: "right 50%",
+        markers: false,
         toggleClass: {targets: "webgl__title"},
         animation: tl2
     })
 }, 1000)
-
-// 인트로2 애니메이션
-// setTimeout(() => {
-//     let tl = gsap.timeline();
-
-//     tl.to(".txt2 span", {duration: 0.6, x: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power4.easeIn})
-//     tl.to(".txt1", {duration: 0.5, y:0, opacity: 1, ease: Circ.easeOut}, "d")
-//     tl.to(".txt3", {duration: 0.5, y:0, opacity: 1, ease: Circ.easeOut}, "d")
-//     tl.to(".figureImg__inner .img1", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-//     tl.to(".figureImg__inner .img2", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-//     tl.to(".figureImg__inner .img3", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-//     tl.to("#header", {duration: 0.4, top: 0, ease: Power3.easeOut}, "e")
-//     tl.to(".scroll__btn", {duration: 0.4, y:0, opacity: 1, ease:Circ.easeOut}, "e")
-// }, 2000)

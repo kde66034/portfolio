@@ -94,7 +94,13 @@
     flex-direction: column;
     position: relative;
 }
-.intro2__title__wrap {}
+.intro2__title__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
 .intro2__title {
     color: #fff;
     font-size: 8vw;
@@ -106,6 +112,14 @@
 .intro2__title:nth-child(1) {
     color: #D2E3C0 !important;
 }
+/* .intro_txt1 {
+    opacity: 0;
+    transform: translateY(100px);
+}
+.intro_txt2 {
+    opacity: 0;
+    transform: translateY(-100px);
+} */
 
 .figureImg2__inner {}
 .figureImg2__inner .img1 {

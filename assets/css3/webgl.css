@@ -38,7 +38,7 @@
 .webgl__title__wrap > .webgl__title span {
     display: inline-block;
     opacity: 0;
-    transform: translateY(300px) scale(1.6);
+    transform: translateY(160px) scale(1.6);
 }
 .webgl__title__wrap .webgl__title span:nth-child(4),
 .webgl__title__wrap .webgl__title span:nth-child(11) {
