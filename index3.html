@@ -90,10 +90,10 @@
                                 게임, 그리고 재미있는 카드 게임이 준비되어 있습니다.
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/gameEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/gameEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -117,10 +117,10 @@
                                 생동감을 느낄 수 있도록 총 7가지의 유형으로 열심히 만들어보았습니다. 
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/parallaxEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/parallaxEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -144,10 +144,10 @@
                                 에 대한 설명을 적어가며 공부하면서 열심히 만들었습니다.
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/sliderEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/sliderEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -171,10 +171,10 @@
                                 GSAP을 통해 만들어 보았습니다.
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/mouseEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/mouseEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -186,7 +186,7 @@
                 <section id="section05" class="section section05">
                     <div class="section__inner">
                         <figure>
-                            <img src="assets/img/mywork05.jpg" alt="Mouse Effect / 마우스 이펙트">
+                            <img src="assets/img/mywork05.jpg" alt="Quiz Effect / 퀴즈 이펙트">
                         </figure>
                         <div class="section__titleDescWrap section05__desc">
                             <h2 class="section__bigtitle">Quiz</h2>
@@ -198,10 +198,10 @@
                                 정답인지 오답인지에 따라 달라지는 애니메이션이 특징입니다.
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/quizEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/quizEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -225,10 +225,10 @@
                                 마지막으로 2분동안 CSS 속성을 검색하는 게임 유형이 있습니다.
                             </p>
                             <div class="section__button__wrap">
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://kde66034.github.io/codingclass/javascript/effect/searchEffect01.html">
                                     <button>VIEW</button>
                                 </a>
-                                <a class="section__button" href="#">
+                                <a class="section__button" href="https://github.com/kde66034/codingclass/tree/main/javascript/effect/searchEffect01.html">
                                     <button>CODE</button>
                                 </a>
                             </div>
@@ -670,13 +670,14 @@
         setTimeout(() => {
             let tl = gsap.timeline();
 
-            tl.to(".txt2 span", {duration: 0.6, x: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
-            tl.to(".txt1", {duration: 0.5, y:0, opacity: 1, ease: Circ.easeOut}, "d")
-            tl.to(".txt3", {duration: 0.5, y:0, opacity: 1, ease: Circ.easeOut}, "d")
-            tl.to(".figureImg__inner .img1", {duration: 0.5, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-            tl.to(".figureImg__inner .img2", {duration: 0.5, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-            tl.to(".figureImg__inner .img3", {duration: 0.5, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
-            tl.to("#header", {duration: 0.5, top: 0, ease: Power3.easeOut})
+            tl.to(".txt2 span", {duration: 0.5, x: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
+            tl.to(".txt1", {duration: 0.4, y:0, opacity: 1, ease: Circ.easeOut}, "d")
+            tl.to(".txt3", {duration: 0.4, y:0, opacity: 1, ease: Circ.easeOut}, "d")
+            tl.to(".figureImg__inner .img1", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
+            tl.to(".figureImg__inner .img2", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
+            tl.to(".figureImg__inner .img3", {duration: 0.4, scale:1, rotation: 360, opacity: 1, ease: Power3.easeOut})
+            tl.to("#header", {duration: 0.4, top: 0, ease: Power3.easeOut})
+            tl.to(".scroll__btn", {duration: 0.3, y:0, opacity: 1, ease:Circ.easeOut})
         }, 2000)
 
         gsap.to(".txt1", {

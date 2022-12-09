@@ -2,6 +2,8 @@
 .listOfMyWork__wrap {
     display: flex;
     justify-content: space-between;
+    background: #0B130D;
+    color: #fff;
 }
 .listOfMyWork__wrap .titleDesc {
     width: 28%;
@@ -11,12 +13,13 @@
 .titleDesc > hr {
     margin: 4vw 0;
     height: 1px;
-    background-color: #dcdcdc;
+    background-color: #555;
     border: none;
 }
 .titleDesc .listOfMyWork__title {
     font-size: 4vw;
     line-height: 1.2;
+    color: #D2E3C0;
 }
 .titleDesc .listOfMyWork__desc {
     line-height: 1.6;
@@ -30,7 +33,7 @@
 .workList summary {
     padding: 2vw 1vw;
     display: block;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid #555;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -38,16 +41,16 @@
     cursor: pointer;
 }
 .workList summary:hover {
-    background-color: #f5f5f5;
+    background-color: rgb(26, 31, 28);
 }
 details[open] summary {
-    background-color: #f5f5f5;
+    background-color: rgb(26, 31, 28);
 }
-details[open] summary:hover {
-    background-color: rgb(216, 216, 216);
-}
+/* details[open] summary:hover {
+    background-color: #161a17;
+} */
 .first_summary {
-    border-top: 1px solid #dcdcdc;
+    border-top: 1px solid #555;
 }
 summary .work__title {
     font-size: 24px;
@@ -71,6 +74,7 @@ summary .work__btn {
     height: 2vw;
     border-radius: 50px;
     transition: transform 0.3s;
+    filter: invert(100%);
 }
 
 details[open] .work__btn {

@@ -79,6 +79,8 @@
     margin: 0 auto;
     position: absolute;
     bottom: 3vw;
+    opacity: 0;
+    transform: translateY(-100px);
 }
 
 /* intro2Type */
