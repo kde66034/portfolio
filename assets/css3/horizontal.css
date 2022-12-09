@@ -1,5 +1,5 @@
 /* horizontalWrap - 가로모드 섹션 */
-.horizontalWrap, .horizontalDescWrap {
+.horizontalWrap {
     width: 100%;
     height: 100vh;
     overflow: hidden;
@@ -7,13 +7,17 @@
 .horizontalWrap {
     position: relative;
 }
-/* .horizontalDescWrap {
+.horizontalDescWrap {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    /* background: #000; */
     position: absolute;
     left: 0;
-    bottom: 0;
-} */
+    top: 0;
+}
 
-.horizontalSection, .horizontalSection2 {
+.horizontalSection, .horizontalDescSection {
     overscroll-behavior: none;
     width: 600%;
     display: flex;
@@ -21,8 +25,6 @@
 }
 
 .section {
-    /* background: rgba(11,19,13,90%); */
-    /* backdrop-filter: blur(10px); */
     width: 100%;
     height: 100vh;
     color: #fff;
@@ -58,74 +60,50 @@
 .section__inner figure {
     width: 60%;
     z-index: 0;
+    position: relative;
 }
 .section__titleDescWrap {
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
     position: absolute;
-    left: 4vw;
-    top: 65vh;
-    opacity: 0;
-    z-index: 2;
+    right: 10vw;
+    top: 15vh;
 }
 
-/* section01 */
-/* .section01 .section__inner {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-left: 30%;
+/* 버튼 */
+.section__button__wrap {
+    margin-top: 5vh;
 }
-.section01 .section__inner figure {
-    width: 60%;
+.section__button > button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding: 8px 30px;
+    font-size: 18px;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
-.section01 .section__titleDescWrap {
-    margin-top: 2vw;
-} */
-/* section02 */
-/* .section02 .section__inner {
-    height: 100vh;
-    display: flex;
-    align-content: flex-start;
-    flex-wrap: wrap;
-    justify-content: center;
+.section__button > button:hover {
+    background-color: transparent;
+    text-shadow: none;
+    color: #000;
 }
-.section02 .section__inner figure {
-    width: 30%;
+.section__button > button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
 }
-.section02 .section__titleDescWrap {
-    margin-top: 30%;
-    margin-left: 4vw;
-} */
-/* section03 */
-/* .section03 .section__inner {
-    height: 100vh;
-    display: flex;
-    align-content: flex-end;
-    flex-wrap: wrap;
-    justify-content: center;
+.section__button > button:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    background: #D2E3C0;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
 }
-.section03 .section__inner figure {
-    width: 42%;
-}
-.section03 .section__titleDescWrap {
-    margin-left: 4vw;
-    padding-bottom: 25%;
-} */
-/* section04 */
-/* .section04 .section__inner {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.section04 .section__inner figure {
-    width: 42%;
-}
-.section04 .section__titleDescWrap {
-    margin-top: 25%;
-    margin-left: 4vw;
-} */
