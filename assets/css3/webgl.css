@@ -18,11 +18,11 @@
     z-index: 1;
 }
 #webgl1 {
-    height: 100vh;
+    height: 90vh;
     width: 100%;
     position: absolute;
     left: 0;
-    top: 0;
+    bottom: 0;
     z-index: 1;
 }
 .webgl__title__wrap > h3 {

@@ -19,7 +19,7 @@
 
 .horizontalSection, .horizontalDescSection {
     overscroll-behavior: none;
-    width: 600%;
+    width: 800%;
     display: flex;
     flex-wrap: nowrap;
 }
@@ -33,7 +33,7 @@
 /* 제목&부제&설명 영역 */
 .section__bigtitle {
     font-family: 'pp_eiko_italiclight';
-    color: rgba(255, 255, 255, 0.2);
+    color: rgba(210, 227, 192, 20%);
     font-size: 100px;
     margin-left: 80px;
 }
@@ -49,6 +49,8 @@
     margin-top: 40px;
     line-height: 160%;
     color: #fff;
+    width: 70%;
+    word-break: keep-all;
 }
 
 /* section common */
@@ -58,14 +60,14 @@
     align-items: center;
 }
 .section__inner figure {
-    width: 60%;
+    width: 50%;
     z-index: 0;
-    position: relative;
+    margin-right: 6vw;
 }
 .section__titleDescWrap {
-    position: absolute;
-    right: 10vw;
-    top: 15vh;
+    position: relative;
+    padding-bottom: 20vh;
+    width: 40%;
 }
 
 /* 버튼 */
