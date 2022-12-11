@@ -1,7 +1,7 @@
 /* myWorkPhp */
 .myWorkPhp__wrap {
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
 }
 .myWorkPhp__inner {
     height: 100vh;
@@ -23,7 +23,7 @@
 /* myWorkWebStan */
 .myWorkWebStan__wrap {
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
 }
 .myWorkWebStan__inner {
     height: 100vh;
@@ -38,14 +38,14 @@
     margin-left: 4vw;
 }
 .myWorkWebStan__wrap .myWork__titleDescWrap {
-    margin-top: 15vh;
+    padding-top: 15vh;
     margin-left: 2vw;
 }
 
 /* myWorkRefer */
 .myWorkRefer__wrap {
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
 }
 .myWorkRefer__inner {
     height: 100vh;
@@ -70,7 +70,7 @@
 /* myWorkReactVue */
 .myWorkReactVue__wrap {
     width: 100%;
-    background: #fff;
+    /* background: #fff; */
 }
 .myWorkReactVue__inner {
     height: 100vh;

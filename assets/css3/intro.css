@@ -1,6 +1,6 @@
 /* introType */
 .intro__wrap {
-    background: #0B130D;
+    /* background: #0B130D; */
     width: 100%;
     height: 100vh;
     display: flex;
@@ -85,7 +85,7 @@
 
 /* intro2Type */
 .intro2__type {
-    background: #0B130D;
+    /* background: #0B130D; */
     width: 100%;
     height: 100vh;
     display: flex;

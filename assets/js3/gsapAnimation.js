@@ -58,20 +58,18 @@ gsap.to(".figureImg__inner .img1, .figureImg__inner .img2, .figureImg__inner .im
 setTimeout(() => {
     let tl = gsap.timeline();
     let tl2 = gsap.timeline();
+    // let tl3 = gsap.timeline();
 
     tl.to(".webgl__title span", {trigger: "#webglType", duration: 0.6, x: 0, y: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
     tl2.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 160, stagger: 0.09, scale: 1, opacity: 0, ease: Power3.easeOut})
+    // tl3.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
 
     ScrollTrigger.create({
         trigger: "#webglType",
         start: "top 50%",
         markers: false,
         toggleClass: {targets: ".webgl__title"},
-        animation: tl
-        // onEnter: () => console.log("onEnter"),
-        // onLeave: () => console.log("onLeave"),
-        // onEnterBack: () => console.log("onEnterBack"),
-        // onLeaveBack: () => console.log("onLeaveBack"),
+        animation: tl,
     });
 
     ScrollTrigger.create({
@@ -80,5 +78,32 @@ setTimeout(() => {
         markers: false,
         toggleClass: {targets: "webgl__title"},
         animation: tl2
-    })
+    });
 }, 1000)
+
+// 배경색 변경
+window.addEventListener("load", function () {
+    const scrollColorElems = document.querySelectorAll("[data-bgcolor]");
+    scrollColorElems.forEach((colorSection, i) => {
+      const prevBg = i === 0 ? "" : scrollColorElems[i - 1].dataset.bgcolor;
+      const prevText = i === 0 ? "" : scrollColorElems[i - 1].dataset.textcolor;
+  
+      ScrollTrigger.create({
+        trigger: colorSection,
+        scroller: "#main",
+        start: "top 50%",
+        onEnter: () =>
+          gsap.to("body", {
+            backgroundColor: colorSection.dataset.bgcolor,
+            color: colorSection.dataset.textcolor,
+            overwrite: "auto"
+          }),
+        onLeaveBack: () =>
+          gsap.to("body", {
+            backgroundColor: prevBg,
+            color: prevText,
+            overwrite: "auto"
+          })
+      });
+    });
+  });
