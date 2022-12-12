@@ -110,10 +110,18 @@ const mouseMove = (e) => {
     let centerPageY = window.innerHeight / 2 - mousePageY;
     
     // GSAP를 통해서 움직이게 하기 
+    // introType
     gsap.to(".figureImg__inner .img1", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
     gsap.to(".figureImg__inner .img2", {duration: 0.4, x: centerPageX/20, y: centerPageY/20});
     gsap.to(".figureImg__inner .img3", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
+    
+    // intro2Type
     gsap.to(".figureImg2__inner .img1", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
     gsap.to(".figureImg2__inner .img2", {duration: 0.4, x: centerPageX/20, y: centerPageY/20});
+
+    // contactImg__inner
+    gsap.to(".figure__wrap .img1", {duration: 0.4, x: centerPageX/70, y: centerPageY/120});
+    gsap.to(".figure__wrap .img2", {duration: 0.4, x: centerPageX/70, y: centerPageY/120});
+    gsap.to(".figure__wrap .img3", {duration: 0.4, x: centerPageX/70, y: centerPageY/120});
 }
 window.addEventListener("mousemove", mouseMove);

@@ -32,7 +32,7 @@
 .contactImg__inner {
     position: absolute;
     left: 8vw;
-    top: 22vh;
+    top: 32vh;
 }
 .contactImg__inner .img1 {
     width: 10vw;
@@ -77,7 +77,7 @@
     font-size: 100px;
     position: absolute;
     right: 20vh;
-    top: 40vh;
+    top: 46vh;
     z-index: 2;
 }
 .contactMe__title {
@@ -86,14 +86,14 @@
     position: absolute;
     padding-right: 45vh;
     right: 20vh;
-    top: 40vh;
+    top: 46vh;
     z-index: 2;
     padding-top: 4vh;
 }
 .contactMe__email {
     color: #fff;
-    right: 16vh;
-    top: 48vh;
+    right: 16.5vh;
+    top: 54vh;
     z-index: 2;
     margin-right: 45vh;
     margin-top: 4vh;
@@ -103,11 +103,11 @@
 .contactMe__email:hover {
     text-decoration: underline;
 }
-.clock {
-    background-image: url(../img/clock.svg);
+.clock__wrap {
+    /* background-image: url(../img/clock.svg);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: contain; */
     width: 18vw;
     height: 18vw;
     position: absolute;

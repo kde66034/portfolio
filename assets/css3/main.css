@@ -114,3 +114,10 @@ div.reveal {
     margin-top: 2vh;
     line-height: 160%;
 }
+
+/* 반응형 */
+@media (max-width: 1280px) {
+    .section__titleDescWrap {
+        width: 50%;
+    }
+}

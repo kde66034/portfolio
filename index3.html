@@ -21,16 +21,20 @@
     <link rel="stylesheet" href="assets/css3/worklist.css">
     <link rel="stylesheet" href="assets/css3/footer.css">
 
+    <link rel="stylesheet" href="assets/css3/clock.css">
+
     <style>
         body {
             background-color: #0B130D;
-            transition: background-color 0.7s ease;
+            transition: all 0.7s ease;
         }
         .color-black {
             background-color: #0B130D;
+            color: #fff;
         }
         .color-white {
             background-color: #fff;
+            color: #000;
         }
         
         .greenbox {
@@ -623,7 +627,19 @@
                         <p class="contactMe__email">kde66034@gmail.com</p>
                     </a>
                 </div>
-                <div class="clock"></div>
+                <div class="clock__wrap">
+                    <div class="clock">
+                        <div class="hour">
+                            <div id="hr" class="hr"></div>
+                        </div>
+                        <div class="min">
+                            <div id="mn" class="mn"></div>
+                        </div>
+                        <div class="sec">
+                            <div id="sc" class="sc"></div>
+                        </div>
+                    </div>
+                </div>
             </section>
             <!-- //contactMe -->
         </div>
@@ -793,5 +809,8 @@
           revealObserver.observe(reveal);
         });
     </script>
+
+    <!-- 아날로그 시계 -->
+    <script src="assets/js3/clock.js"></script>
 </body>
 </html>
