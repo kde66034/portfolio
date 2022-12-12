@@ -136,3 +136,13 @@
     left: 12%;
     bottom: 7%;
 }
+
+/* 반응형 */
+@media (max-width: 1280px) {
+    .figureImg__inner .img2 {
+        top: 18%;
+    }
+    .figureImg__inner .img3 {
+        bottom: 17%;
+    }
+}
