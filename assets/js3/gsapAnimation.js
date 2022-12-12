@@ -76,9 +76,44 @@ setTimeout(() => {
         trigger: "#section01",
         start: "right 50%",
         markers: false,
-        toggleClass: {targets: "webgl__title"},
+        toggleClass: {targets: ".webgl__title"},
         animation: tl2
     });
 }, 1000)
 
 // intro2Type 애니메이션
+setTimeout(() => {
+    let tl4 = gsap.timeline();
+
+    tl4.to(".intro_txt1", {trigger: "#intro2Type", duration: 0.5, y:0, opacity: 1, stagger: 0.09, ease: Circ.easeOut})
+    tl4.to(".intro_txt2", {trigger: "#intro2Type", duration: 0.5, y:0, opacity: 1, stagger: 0.09, ease: Circ.easeOut})
+    tl4.to(".figureImg2__inner .img1", {trigger: "#intro2Type", duration: 0.5, scale:1, stagger: 0.09, rotation: 360, opacity: 1, ease: Power3.easeOut})
+    tl4.to(".figureImg2__inner .img2", {trigger: "#intro2Type", duration: 0.5, scale:1, stagger: 0.09, rotation: 360, opacity: 1, ease: Power3.easeOut})
+
+    ScrollTrigger.create({
+        trigger: "#intro2Type",
+        start: "top 50%",
+        markers: false,
+        toggleClass: {targets: ".intro2__title__wrap"},
+        animation: tl4,
+    });
+}, 2000)
+
+// 아이콘 움직이기
+const mouseMove = (e) => {
+    // 마우스 좌표값
+    let mousePageX = e.pageX;
+    let mousePageY = e.pageY;
+
+    // 마우스 좌표값 가운데로 초기화 : 전체길이 / 2 - 마우스 좌표값 == 0
+    let centerPageX = window.innerWidth / 2 - mousePageX;
+    let centerPageY = window.innerHeight / 2 - mousePageY;
+    
+    // GSAP를 통해서 움직이게 하기 
+    gsap.to(".figureImg__inner .img1", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
+    gsap.to(".figureImg__inner .img2", {duration: 0.4, x: centerPageX/20, y: centerPageY/20});
+    gsap.to(".figureImg__inner .img3", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
+    gsap.to(".figureImg2__inner .img1", {duration: 0.4, x: -centerPageX/20, y: -centerPageY/20});
+    gsap.to(".figureImg2__inner .img2", {duration: 0.4, x: centerPageX/20, y: centerPageY/20});
+}
+window.addEventListener("mousemove", mouseMove);
