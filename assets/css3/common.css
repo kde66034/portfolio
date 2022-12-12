@@ -129,10 +129,10 @@ figure {
     overflow: hidden;
 }
 .image__box a img {
-    transition: all 0.5s ease;
+    transition: all 0.5s ease !important;
 }
 .image__box:hover a img {
-    transform: scale(1.05);
+    transform: scale(1.05) !important;
 }
 
 .scrollTop {

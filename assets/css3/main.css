@@ -1,3 +1,11 @@
+figure.reveal,
+div.reveal {
+    visibility: hidden;
+}
+/* figure.reveal img {
+    object-fit: cover;
+} */
+
 /* myWorkPhp */
 .myWorkPhp__wrap {
     width: 100%;

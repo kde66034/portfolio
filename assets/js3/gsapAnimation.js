@@ -80,3 +80,5 @@ setTimeout(() => {
         animation: tl2
     });
 }, 1000)
+
+// intro2Type 애니메이션

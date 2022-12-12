@@ -32,6 +32,13 @@
         .color-white {
             background-color: #fff;
         }
+        
+        .greenbox {
+            display: block;
+            width: 100%;
+            height: 45vh;
+            background: #cedebc;
+        }
     </style>
 </head>
 <body>
@@ -262,15 +269,17 @@
             <!-- //horizontalWrap -->
         </div>
 
+        <div class="greenbox"></div>
+
         <div class="white panel" data-color="white">
             <section id="myWorkPhp" class="myWorkPhp__wrap">
                 <div class="myWorkPhp__inner">
-                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                    <figure class="image__box reveal">
                         <a href="http://kde9902.dothome.co.kr/php/main/main.php" target="_blank">
                             <img src="assets/img/mywork01.jpg" alt="PHP Team Project / PHP 팀 프로젝트 : 지구ON">
                         </a>
                     </figure>
-                    <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
+                    <div class="myWork__titleDescWrap reveal">
                         <h2 class="myWork__bigtitle">PHP</h2>
                         <h3 class="myWork__title">PHP Team Project</h3>
                         <p class="myWork__desc">
@@ -285,12 +294,12 @@
     
             <section id="myWorkWebStan" class="myWorkWebStan__wrap">
                 <div class="myWorkWebStan__inner">
-                    <figure class="image__box gs_reveal gs_reveal_fromRight">
+                    <figure class="image__box reveal">
                         <a href="https://kde66034.github.io/codingclass/site/site1/index.html" target="_blank">
                             <img src="assets/img/mywork02.jpg" alt="Web Standard Site / 웹 표준을 준수하여 제작한 웹사이트 : 별빛제빵교실">
                         </a>
                     </figure>
-                    <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromLeft">
+                    <div class="myWork__titleDescWrap reveal">
                         <h2 class="myWork__bigtitle">Standard</h2>
                         <h3 class="myWork__title">Web Standard Site</h3>
                         <p class="myWork__desc">
@@ -305,12 +314,12 @@
     
             <section id="myWorkRefer" class="myWorkRefer__wrap">
                 <div class="myWorkRefer__inner">
-                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                    <figure class="image__box reveal">
                         <a href="https://kde66034.github.io/codingclass/javascript/index.html" target="_blank">
                             <img src="assets/img/mywork03.jpg" alt="Coding Reference Book / 코딩 레퍼런스 북">
                         </a>
                     </figure>
-                    <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
+                    <div class="myWork__titleDescWrap reveal">
                         <h2 class="myWork__bigtitle">Reference</h2>
                         <h3 class="myWork__title">Coding Reference Book</h3>
                         <p class="myWork__desc">
@@ -318,7 +327,7 @@
                             되었던 온라인 상의 레퍼런스 북입니다.<br>
                             HTML과 CSS, JS의 기초를 다뤘습니다.
                         </p>
-                        <p class="myWork__desc2 gs_reveal gs_reveal_fromRight">
+                        <p class="myWork__desc2 reveal">
                             HTML 태그 총 134개, CSS 속성 총 382개, 그리고 자바스크립트의 수많은 공식들…,<br>
                             어찌나 공부해야 할 것이 많은지, 정리해두지 않으면 시간이 아무리 지나도 저의 코딩<br>
                             울렁증은 도저히 극복할 수 없을 것 같았어요. 코딩 초보시절 직접 공부하고 정리하며<br>
@@ -331,10 +340,10 @@
     
             <section id="myWorkReactVue" class="myWorkReactVue__wrap">
                 <div class="myWorkReactVue__inner">
-                    <figure class="image__box gs_reveal gs_reveal_fromLeft">
+                    <figure class="image__box reveal">
                         <img src="assets/img/mywork04.jpg" alt="React/Vue Site / 리액트 & 뷰 사이트">
                     </figure>
-                    <div class="myWork__titleDescWrap gs_reveal gs_reveal_fromRight">
+                    <div class="myWork__titleDescWrap reveal">
                         <h2 class="myWork__bigtitle">React/Vue</h2>
                         <h3 class="myWork__title">React/Vue Site</h3>
                         <p class="myWork__desc">
@@ -708,6 +717,55 @@
           });    
 
         }).scroll();
+    </script>
+
+    <!-- 이미지 리빌 효과 -->
+    <script>
+        const options = {
+          root: null,
+          rootMargin: "0px",
+          threshold: 0.9
+        };
+
+        let revealCallback = (entries, self) => {
+          entries.forEach((entry) => {
+            let container = entry.target;
+            let img = entry.target.querySelector(".image__box img");
+            const easeInOut = "power3.out";
+            const revealAnim = gsap.timeline({ ease: easeInOut });
+        
+            if (entry.isIntersecting) {
+              revealAnim.set(container, {
+                visibility: "visible"
+              });
+              revealAnim.fromTo(
+                container,
+                {
+                  clipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)",
+                  webkitClipPath: "polygon(0 0, 0 0, 0 100%, 0% 100%)"
+                },
+                {
+                  clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                  webkitClipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)",
+                  duration: 1,
+                  ease: easeInOut
+                }
+              );
+              revealAnim.from(img, 4, {
+                scale: 1.4,
+                ease: easeInOut,
+                delay: -1
+              });
+              self.unobserve(entry.target);
+            }
+          });
+        };
+
+        let revealObserver = new IntersectionObserver(revealCallback, options);
+
+        document.querySelectorAll(".reveal").forEach((reveal) => {
+          revealObserver.observe(reveal);
+        });
     </script>
 </body>
 </html>
