@@ -3,7 +3,7 @@ gsap.registerPlugin(ScrollTrigger);
 const sections = gsap.utils.toArray(".section");
 
 gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
+    xPercent: -100 * (sections.length),
     ease: "none",
     scrollTrigger: {
         trigger: ".horizontalWrap",

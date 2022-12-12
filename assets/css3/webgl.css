@@ -35,6 +35,22 @@
     color: #fff !important;
 }
 
+.webgl__title3__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.webgl__title3 {
+    font-size: 8vw;
+    text-align: center;
+    z-index: 2;
+    line-height: 1.1;
+    color: #D2E3C0;
+}
+
+
 .webgl__title__wrap > .webgl__title span {
     display: inline-block;
     opacity: 0;

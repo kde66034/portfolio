@@ -24,7 +24,7 @@
     <style>
         body {
             background-color: #0B130D;
-            transition: background-color 1s ease;
+            transition: background-color 0.7s ease;
         }
         .color-black {
             background-color: #0B130D;
@@ -251,9 +251,9 @@
                     </section>
                     <!-- //section06 -->
                     
-                    <div class="webgl__title__wrap section">
-                        <h3 class="webgl__title neue_world_semiultra">
-                            all works details
+                    <div class="webgl__title3__wrap section">
+                        <h3 class="webgl__title3 neue_world_semiultra">
+                            all site works
                         </h3>
                     </div>
                     <!-- //webgltitle -->
@@ -686,15 +686,15 @@
               $body = $('body'),
               $panel = $('.panel');
 
-          // Change 33% earlier than scroll position so colour is there when you arrive.
-          var scroll = $window.scrollTop() + ($window.height() / 3);
+          // Change 22% earlier than scroll position so colour is there when you arrive.
+          var scroll = $window.scrollTop() + ($window.height() / 2);
 
           $panel.each(function () {
             var $this = $(this);
 
             // if position is within range of this panel.
             // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-            // Remember we set the scroll to 33% earlier in scroll var.
+            // Remember we set the scroll to 22% earlier in scroll var.
             if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
 
               // Remove all classes on body with color-
