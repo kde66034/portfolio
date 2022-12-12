@@ -34,14 +34,14 @@
 .section__bigtitle {
     font-family: 'pp_eiko_italiclight';
     color: rgba(210, 227, 192, 20%);
-    font-size: 6vw;
-    margin-left: 80px;
+    font-size: 100px;
+    margin-left: 4vw;
 }
 .section__title {
-    font-size: 1.6vw;
+    font-size: 24px;
     position: absolute;
     left: 0;
-    top: 4vh;
+    top: 7%;
     z-index: 2;
     color: #fff;
 }
