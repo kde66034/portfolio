@@ -53,7 +53,6 @@
     color: #fff;
     margin-top: 2vh;
     text-align: center;
-    font-size: 1vw;
 }
 .figure__wrap {
     transition: all 0.4s;
@@ -153,6 +152,27 @@
     bottom: 90vh;
 }
 
+.outro__title1,
+.outro__title2,
+.outro__copyright,
+.profile__image {
+    opacity: 0;
+}
+
+.outro__title1 {
+    transform: translateY(100px);
+}
+.outro__title2 {
+    transform: translateY(-100px);
+}
+.outro__copyright {
+    transform: translateY(100px);
+}
+
+.profile__image {
+    transform: scale(0);
+}
+
 /* 반응형 */
 @media (max-width: 1280px) {
     .footer__bigtitle {
@@ -176,5 +196,107 @@
     }
     .clock {
         transform: scale(0.7);
+    }
+    .profile__image {
+        bottom: 81vh;
+    }
+}
+@media (max-width: 800px) {
+    .footer__bigtitle {
+        font-size: 60px;
+        margin-left: 50px;
+    }
+    .footer__title {
+        top: 12vh;
+    }
+    .contactImg__inner .img1,
+    .contactImg__inner .img2,
+    .contactImg__inner .img3 {
+        width: 20vw;
+        margin-bottom: 30px;
+    }
+    .contactMe__bigtitle {
+        font-size: 60px;
+        margin-left: 50px;
+        right: 8vw;
+    }
+    .contactMe__title {
+        right: 8vw;
+        top: 44vh;
+    }
+    .contactMe__email {
+        right: 2vw;
+        top: 50vh;
+    }
+    .clock__wrap {
+        padding-right: 35vw;
+    }
+    .clock {
+        transform: scale(0.5);
+    }
+    .profile__image {
+        bottom: 68vh;
+    }
+}
+@media (max-width: 600px) {
+    .contactMe__bigtitle {
+        top: 34vh;
+    }
+    .contactMe__title {
+        top: 32.5vh;
+    }
+    .contactMe__email {
+        top: 38vh;
+        right: 0vw;
+    }
+    .clock__wrap {
+        right: 32vw;
+        top: 10vh;
+    }
+    .profile__image {
+        width: 22vw;
+        bottom: 66vh;
+        left: 67vw;
+    }
+}
+@media (max-width: 450px) {
+    .contactMe__bigtitle {
+        top: 65vh;
+    }
+    .contactMe__title {
+        top: 62.5vh;
+        right: 31vw;
+    }
+    .contactMe__email {
+        top: 70vh;
+        right: 20vw;
+    }
+    .clock__wrap {
+        right: 42vw;
+        top: 10vh;
+    }
+    .profile__image {
+        width: 30vw;
+        left: 50vw;
+        bottom: 68vh;
+    }
+}
+@media (max-width: 380px) {
+    .contactMe__bigtitle {
+        top: 71vh;
+        right: 3vw;
+    }
+    .contactMe__title {
+        top: 70.5vh;
+        right: 36vw;
+    }
+    .contactMe__email {
+        top: 80vh;
+        right: 22vw;
+    }
+    .profile__image {
+        width: 30vw;
+        left: 36vw;
+        bottom: 72vh;
     }
 }

@@ -152,6 +152,9 @@ div.reveal {
     }
 }
 @media (max-width: 550px) {
+    .myWork__bigtitle {
+        margin-left: 16px;
+    }
     .myWorkPhp__inner {
         align-items: baseline;
         flex-direction: column;
@@ -165,6 +168,10 @@ div.reveal {
         justify-content: center;
         align-content: flex-end;
         flex-wrap: wrap;
+    }
+    .myWorkWebStan__wrap figure {
+        margin-right: 0;
+        margin-left: 0;
     }
     .myWorkWebStan__wrap .myWork__titleDescWrap {
         margin-top: 3vh;
@@ -192,5 +199,6 @@ div.reveal {
     }
     .myWork__title {
         top: 15%;
+        left: 0vw;
     }
 }

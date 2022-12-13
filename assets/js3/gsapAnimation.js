@@ -99,6 +99,24 @@ setTimeout(() => {
     });
 }, 2000)
 
+// outro 애니메이션
+setTimeout(() => {
+    let tl5 = gsap.timeline();
+
+    tl5.to(".outro__title1", {trigger: "#outro", duration: 0.5, y:0, opacity: 1, stagger: 0.09, ease: Circ.easeOut})
+    tl5.to(".outro__title2", {trigger: "#outro", duration: 0.5, y:0, opacity: 1, stagger: 0.09, ease: Circ.easeOut})
+    tl5.to(".outro__copyright", {trigger: "#outro", duration: 0.5, y:0, opacity: 1, stagger: 0.09, ease: Circ.easeOut})
+    tl5.to(".profile__image", {trigger: "#outro", duration: 0.5, scale:1, stagger: 0.09, opacity: 1, ease: Circ.easeOut})
+
+    ScrollTrigger.create({
+        trigger: "#outro",
+        start: "top 50%",
+        markers: false,
+        toggleClass: {targets: ".outro__title__wrap"},
+        animation: tl5,
+    });
+}, 2000)
+
 // 아이콘 움직이기
 const mouseMove = (e) => {
     // 마우스 좌표값
