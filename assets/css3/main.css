@@ -142,6 +142,7 @@ div.reveal {
     .myWork__title {
         font-size: 18px;
         top: 22px;
+        left: 5vw;
     }
     .myWork__desc {
         font-size: 15px;
@@ -188,5 +189,8 @@ div.reveal {
         flex-wrap: wrap;
         align-content: flex-end;
         align-items: center;
+    }
+    .myWork__title {
+        top: 15%;
     }
 }

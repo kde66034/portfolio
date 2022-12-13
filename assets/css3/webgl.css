@@ -69,6 +69,6 @@
 }
 @media (max-width: 450px) {
     #webgl1 {
-        height: 45vh;
+        height: 28vh !important;
     }    
 }

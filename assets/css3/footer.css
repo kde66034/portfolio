@@ -16,7 +16,7 @@
     font-size: 100px;
     margin-left: 80px;
     position: absolute;
-    left: 12vh;
+    left: 6vw;
     top: 14vh;
     z-index: 2;
 }
@@ -24,7 +24,7 @@
     font-size: 24px;
     color: #D1E2C0;
     position: absolute;
-    left: 12vh;
+    left: 6vw;
     top: 14vh;
     z-index: 2;
     padding-top: 4vh;
@@ -76,7 +76,7 @@
     color: rgba(210,227,192,15%);
     font-size: 100px;
     position: absolute;
-    right: 20vh;
+    right: 15vw;
     top: 46vh;
     z-index: 2;
 }
@@ -84,18 +84,18 @@
     font-size: 24px;
     color: #D1E2C0;
     position: absolute;
-    padding-right: 45vh;
-    right: 20vh;
+    padding-right: 30vw;
+    right: 10vw;
     top: 46vh;
     z-index: 2;
     padding-top: 4vh;
 }
 .contactMe__email {
     color: #fff;
-    right: 16.5vh;
+    right: 8.5vw;
     top: 54vh;
     z-index: 2;
-    margin-right: 45vh;
+    margin-right: 30vw;
     margin-top: 4vh;
     display: inline;
     position: absolute;
@@ -104,15 +104,11 @@
     text-decoration: underline;
 }
 .clock__wrap {
-    /* background-image: url(../img/clock.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: contain; */
     width: 18vw;
-    height: 18vw;
+    height: 18vh;
     position: absolute;
-    padding-right: 45vh;
-    right: 20vh;
+    padding-right: 25vw;
+    right: 10vw;
     top: 16vh;
 }
 
@@ -150,9 +146,35 @@
 }
 .profile__image {
     width: 16vw;
-    height: 16vw;
+    height: 16vh;
     border-radius: 50px;
     position: relative;
-    right: -62vw;
-    bottom: 46vw;
+    left: 72vw;
+    bottom: 90vh;
+}
+
+/* 반응형 */
+@media (max-width: 1280px) {
+    .footer__bigtitle {
+        font-size: 80px;
+        margin-left: 60px;
+    }
+    .footer__title {
+        font-size: 20px;
+    }
+    .contactMe__bigtitle {
+        font-size: 80px;
+        margin-left: 60px;
+    }
+    .contactMe__title {
+        font-size: 20px;
+        right: 12vw;
+    }
+    .clock__wrap {
+        right: 16vw;
+        top: 20vh;
+    }
+    .clock {
+        transform: scale(0.7);
+    }
 }
