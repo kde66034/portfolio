@@ -60,3 +60,15 @@
 .webgl__title__wrap .webgl__title span:nth-child(11) {
     margin: 0 1vw;
 }
+
+/* 반응형 */
+@media (max-width: 800px) {
+    #webgl1 {
+        height: 70vh;
+    }    
+}
+@media (max-width: 450px) {
+    #webgl1 {
+        height: 45vh;
+    }    
+}

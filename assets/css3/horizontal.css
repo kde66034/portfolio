@@ -112,5 +112,61 @@
 
 /* 반응형 */
 @media (max-width: 1280px) {
-    
+    .section__inner figure {
+        padding-bottom: 18vh;
+    }
+    .section__bigtitle {
+        font-size: 80px;
+    }
+    .section__title {
+        font-size: 20px;
+        top: 5.5%;
+    }
+    .section__desc {
+        font-size: 15px;
+    }
+}
+@media (max-width: 800px) {
+    .section__bigtitle {
+        font-size: 70px;
+    }
+    .section__title {
+        font-size: 20px;
+        top: 4.4%;
+    }
+    .section__desc {
+        font-size: 14px;
+    }
+    .section__button__wrap {
+        margin-top: 3.8vh;
+    }
+    .section__button > button {
+        padding: 4px 20px;
+        font-size: 16px;
+    }
+    .section__inner figure {
+        margin-right: 4.8vw;
+        padding-bottom: 15vh;
+    }
+}
+@media (max-width: 550px) {
+    .section__inner {
+        display: block;
+    }
+    .section__titleDescWrap {
+        width: 70%;
+    }
+    .section__inner figure {
+        width: 70%;
+        margin-right: 0;
+        padding-bottom: 0;
+        margin-top: 12vh;
+    }
+    .section__bigtitle {
+        margin-top: 2vh;
+    }
+    .section__desc {
+        margin-top: 2vh;
+        width: 100%;
+    }
 }

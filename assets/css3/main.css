@@ -117,7 +117,14 @@ div.reveal {
 
 /* 반응형 */
 @media (max-width: 1280px) {
-    .section__titleDescWrap {
-        width: 50%;
+    .myWork__desc2 {
+        margin-left: 6vw;
+    }
+    .myWork__bigtitle {
+        font-size: 80px;
+        margin-left: 60px;
+    }
+    .myWork__title {
+        font-size: 20px;
     }
 }
