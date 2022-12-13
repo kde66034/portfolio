@@ -19,13 +19,13 @@ div.reveal {
 .myWorkPhp__wrap figure {
     width: 60%;
     margin-right: 5vw;
-    margin-left: 2vh;
+    margin-left: 2vw;
 }
 .myWork__titleDescWrap {
     position: relative;
 }
 .myWorkPhp__wrap .myWork__titleDescWrap {
-    margin-top: 5vw;
+    margin-top: 3vh;
 }
 
 /* myWorkWebStan */
@@ -67,10 +67,10 @@ div.reveal {
     margin-left: 2vw;
 }
 .myWorkRefer__wrap .myWork__titleDescWrap {
-    margin-top: 1vw;
+    margin-top: 1vh;
 }
 .myWork__desc2 {
-    margin-top: 16vw;
+    margin-top: 46vh;
     margin-left: 15vw;
     line-height: 160%;
 }
@@ -86,8 +86,7 @@ div.reveal {
     justify-content: center;
     flex-direction: column;
     margin-left: 35vw;
-    margin-top: 10vw;
-    padding-bottom: 10vw;
+    margin-top: 17vh;
 }
 .myWorkReactVue__inner figure {
     width: 70%;
@@ -118,7 +117,8 @@ div.reveal {
 /* 반응형 */
 @media (max-width: 1280px) {
     .myWork__desc2 {
-        margin-left: 6vw;
+        margin-left: 4vw;
+        margin-top: 26vh;
     }
     .myWork__bigtitle {
         font-size: 80px;
@@ -126,5 +126,67 @@ div.reveal {
     }
     .myWork__title {
         font-size: 20px;
+        top: 30px;
+    }
+}
+@media (max-width: 1157px) {
+    .myWork__desc2 {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .myWork__bigtitle {
+        font-size: 60px;
+        margin-left: 55px;
+    }
+    .myWork__title {
+        font-size: 18px;
+        top: 22px;
+    }
+    .myWork__desc {
+        font-size: 15px;
+    }
+    .myWorkReactVue__inner {
+        margin-left: 18vw;
+    }
+}
+@media (max-width: 550px) {
+    .myWorkPhp__inner {
+        align-items: baseline;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        justify-content: center;
+    }
+    .myWorkWebStan__inner {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        align-content: flex-end;
+        flex-wrap: wrap;
+    }
+    .myWorkWebStan__wrap .myWork__titleDescWrap {
+        margin-top: 3vh;
+        margin-left: 0;
+    }
+    .myWorkRefer__inner {
+        margin: 0;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        align-items: baseline;
+        justify-content: center;
+    }
+    .myWorkRefer__wrap .myWork__titleDescWrap {
+        margin-top: 3vh;
+    }
+    .myWorkReactVue__inner {
+        margin-left: 0;
+        margin-top: 0;
+        justify-content: center;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: flex-end;
+        align-items: center;
     }
 }

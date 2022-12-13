@@ -11,7 +11,7 @@
     padding-top: 16vh;
 }
 .titleDesc > hr {
-    margin: 4vw 0;
+    margin: 4vh 0;
     height: 1px;
     background-color: #555;
     border: none;
@@ -23,6 +23,7 @@
 }
 .titleDesc .listOfMyWork__desc {
     line-height: 1.6;
+    text-align: justify;
 }
 .listOfMyWork__wrap .workList {
     width: 62%;
@@ -31,7 +32,7 @@
     margin-bottom: 16vh;
 }
 .workList summary {
-    padding: 2vw 1vw;
+    padding: 3vh 1vw;
     display: block;
     border-bottom: 1px solid #555;
     display: flex;
@@ -70,8 +71,8 @@ summary .work__btn {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: contain;
-    width: 2vw;
-    height: 2vw;
+    width: 30px;
+    height: 30px;
     border-radius: 50px;
     transition: transform 0.3s;
     filter: invert(100%);
@@ -88,4 +89,22 @@ details[open] .work__btn {
     box-sizing: border-box;
     line-height: 1.6;
     column-count: 2;
+    text-align: justify;
+}
+
+/* 반응형 */
+@media (max-width: 1100px) {
+    .listOfMyWork__wrap {
+        flex-direction: column;
+    }
+    .listOfMyWork__wrap .titleDesc {
+        width: 100%;
+        margin-left: 0;
+        padding: 16vh 3vw 0 3vw;
+    }
+    .listOfMyWork__wrap .workList {
+        width: 100%;
+        margin-top: 8vh;
+        padding: 0 3vw;
+    }
 }
