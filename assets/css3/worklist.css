@@ -92,6 +92,48 @@ details[open] .work__btn {
     text-align: justify;
 }
 
+.work__button__wrap {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+.work__button > button {
+    font-family: 'Poppins';
+    font-weight: 400;
+    text-transform: uppercase;
+    position: relative;
+    padding: 8px 30px;
+    font-size: 18px;
+    background: transparent;
+    border: 1px dashed #fff;
+    color: #fff;
+    cursor: pointer;
+    /* transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s; */
+    margin-right: 0.5vw;
+}
+/* .work__button > button:hover {
+    background-color: transparent;
+    text-shadow: none;
+    color: #000;
+}
+.work__button > button:hover:before {
+    bottom: 0%;
+    top: auto;
+    height: 100%;
+}
+.work__button > button:before {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 0;
+    width: 100%;
+    z-index: -1;
+    content: '';
+    background: #D2E3C0;
+    transition: all 0.4s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
+} */
+
 /* 반응형 */
 @media (max-width: 1100px) {
     .listOfMyWork__wrap {
