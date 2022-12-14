@@ -62,12 +62,12 @@ setTimeout(() => {
 
     tl.to(".webgl__title span", {trigger: "#webglType", duration: 0.6, x: 0, y: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
     tl2.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 160, stagger: 0.09, scale: 1, opacity: 0, ease: Power3.easeOut})
-    // tl3.to(".webgl__title span", {trigger: "#section01", duration: 0.6, x: 0, y: 0, stagger: 0.09, scale: 1, opacity: 1, ease: Power3.easeIn})
 
     ScrollTrigger.create({
         trigger: "#webglType",
         start: "top 50%",
-        markers: false,
+        end: "top 0%",
+        markers: true,
         toggleClass: {targets: ".webgl__title"},
         animation: tl,
     });
@@ -75,6 +75,7 @@ setTimeout(() => {
     ScrollTrigger.create({
         trigger: "#section01",
         start: "right 50%",
+        end: "right 0%",
         markers: false,
         toggleClass: {targets: ".webgl__title"},
         animation: tl2
