@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="assets/css3/common.css">
     <link rel="stylesheet" href="assets/css3/reset.css">
     <link rel="stylesheet" href="assets/css3/locomotive-scroll.css">
-    <link rel="stylesheet" href="assets/css3/cursor.css">
 
     <link rel="stylesheet" href="assets/css3/header.css">
     <link rel="stylesheet" href="assets/css3/intro.css">
@@ -63,7 +62,7 @@
     <!-- //scrollTop -->
 
     <main id="main">
-        <div class="black panel" data-color="black">
+        <div class="backColor black panel" data-color="#0B130D">
             <section id="introType" class="intro__wrap">
                 <div class="intro__title__wrap">
                     <div class="txt1 intro__title pp_write_book">
@@ -275,7 +274,7 @@
 
         <div class="greenbox"></div>
 
-        <div class="white panel" data-color="white">
+        <div class="backColor white panel" data-color="#ffffff">
             <section id="myWorkPhp" class="myWorkPhp__wrap">
                 <div class="myWorkPhp__inner">
                     <figure class="image__box reveal">
@@ -363,7 +362,7 @@
             <!-- //myWorkReactVue -->
         </div>
         
-        <div class="black panel" data-color="black">
+        <div class="backColor black panel" data-color="#0B130D">
             <section id="intro2Type" class="intro2__type">
                 <div class="intro2__title__wrap">
                     <div class="intro_txt1 intro2__title neue_world_semiultra">
@@ -676,7 +675,7 @@
             <!-- //getInTouch -->
     
             <section id="contactMe" class="contactMe__wrap">
-                <div class="contaCctMe__title__wrap">
+                <div class="contactMe__title__wrap">
                     <h2 class="contactMe__bigtitle">Contact Me</h2>
                     <h3 class="contactMe__title">Contact Me</h3>
                     <a href="mailto:kde66034@gmail.com">
@@ -748,23 +747,6 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
 
-    <!-- JAVASCRIPT - 스크롤탑값 표시 -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/skrollr@0.6.26/dist/skrollr.min.js"></script>
-    <script>
-        const s = skrollr.init();
-
-        function scroll() {
-            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-            document.querySelector(".scrollTop").innerText = Math.ceil(scrollTop);
-
-            // document.querySelector(".sec1_text1").style.marginLeft = scrollTop + "px";
-
-            requestAnimationFrame(scroll);
-        }
-        scroll();
-    </script> -->
-
     <!-- GSAP 애니메이션 -->
     <script src="assets/js3/gsapAnimation.js"></script>
 
@@ -784,38 +766,7 @@
     <script src="assets/js3/webgl.js"></script>
 
     <!-- 배경 색 변경 -->
-    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-    <script>
-        $(window).scroll(function() {
-  
-          // selectors
-          var $window = $(window),
-              $body = $('body'),
-              $panel = $('.panel');
-
-          // Change 22% earlier than scroll position so colour is there when you arrive.
-          var scroll = $window.scrollTop() + ($window.height() / 2);
-
-          $panel.each(function () {
-            var $this = $(this);
-
-            // if position is within range of this panel.
-            // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-            // Remember we set the scroll to 22% earlier in scroll var.
-            if ($this.position().top <= scroll && $this.position().top + $this.height() > scroll) {
-
-              // Remove all classes on body with color-
-              $body.removeClass(function (index, css) {
-                return (css.match (/(^|\s)color-\S+/g) || []).join(' ');
-              });
-
-              // Add class of currently active div
-              $body.addClass('color-' + $(this).data('color'));
-            }
-          });    
-
-        }).scroll();
-    </script>
+    <script src="assets/js3/changeBG.js"></script>
 
     <!-- 이미지 리빌 효과 -->
     <script>
